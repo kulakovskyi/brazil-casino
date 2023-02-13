@@ -4,9 +4,6 @@ import { burger } from './functions/burger';
 //Acordeon
 import { accorderon } from './functions/accorderon';
 
-//header input
-import { inputComponent } from './components/inputHeaderComponent';
-
 //Footer cookie
 import { footerCookie } from './components/footerCookieComponent';
 

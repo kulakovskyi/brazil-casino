@@ -4,25 +4,41 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.1), inset 0px 4px 0px rgba(255, 255, 255, 0.2);
+    margin-left: auto;
+
     border-radius: 8px;
-    width: 44px;
-    height: 44px;
+    width: 26px;
+    height: 20px;
     position: relative;
     z-index: 5;
+
+    span{
+      position: absolute;
+      width: 19px;
+      height: 3px;
+      background: $yellow;
+      border-radius: 8px;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      transition: opacity $transition;
+    }
+
+    &._active span{
+      opacity: 0;
+    }
+
 
     &::before {
       content: "";
       position: absolute;
-      width: 20px;
+      width: 26px;
       height: 3px;
-      background: $white;
+      background: $yellow;
       border-radius: 8px;
-      top: 11px;
+      top: 0px;
       left: 50%;
       transform: translate(-50%, 0);
-      opacity: 0;
       transition: $transition;
     }
 
@@ -36,14 +52,13 @@
     &::after {
       content: "";
       position: absolute;
-      width: 20px;
+      width: 26px;
       height: 3px;
-      background: $white;
+      background: $yellow;
       border-radius: 8px;
-      bottom: 11px;
+      bottom: 0px;
       left: 50%;
       transform: translate(-50%, 0);
-      opacity: 0;
       transition: $transition;
     }
 
@@ -61,11 +76,163 @@
 }
 
 .header {
-  position: absolute;
+  position: relative;
   width: 100%;
   top: 0;
   left: 0;
-  padding: 17px 0;
+  padding: 11px 0;
+  background: $blue;
+  @include breakpoint($tablet-bp) {
+    padding: 9px 0;
+  }
+
+  &__language{
+    cursor: pointer;
+    min-width: 40px;
+    max-width: 40px;
+    height: 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 20px 0 0;
+    @include breakpoint(1240px) {
+      margin: 0 10px 0 0;
+    }
+
+    @include breakpoint($tablet-bp) {
+      position: absolute;
+      top: 21px;
+      right: 50px;
+      z-index: 11;
+    }
+
+    &::before{
+      position: absolute;
+      background: transparent;
+      cursor: pointer;
+      width: 160%;
+      height: 50px;
+      top: 0;
+      left: -20px;
+      z-index: 0;
+    }
+
+    &._open::after{
+      transform: rotate(180deg) !important;
+      margin-top: -1px !important;
+    }
+
+    &:hover::before {
+      content: '';
+    }
+
+    &:hover::after {
+      transform: rotate(180deg);
+      margin-top: -1px;
+      @include breakpoint($tablet-bp) {
+        transform: rotate(0deg);
+        margin-top: 0px;
+      }
+    }
+
+    &:hover .header__language-list{
+      display: block;
+      @include breakpoint($tablet-bp) {
+        display: none;
+      }
+    }
+
+    &-item{
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      font-family: $font-popins-reg;
+      font-size: 15px;
+      line-height: 34px;
+      letter-spacing: -0.004em;
+      color: $white;
+      padding: 8px 20px 6px;
+
+      &._active::after{
+        content: '';
+      }
+
+      &::after{
+        position: absolute;
+        right: 13px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 12px;
+        height: 9px;
+        background: url("../img/arrow-language.svg") no-repeat 0 0/contain;
+      }
+
+      &:hover{
+        background: $blue-white;
+      }
+
+      &::before{
+        width: 28px;
+        height: 28px;
+        margin: 0 10px 0 0;
+      }
+    }
+    &-pt{
+      &::before{
+        content: '';
+        background: url("../img/language-pt.webp") no-repeat 0 0/contain;
+      }
+    }
+    &-en{
+      &::before{
+        content: '';
+        background: url("../img/language-en.webp") no-repeat 0 0/contain;
+      }
+    }
+    &-list{
+      display: none;
+      min-width: 220px;
+      max-width: 230px;
+      top: 46px;
+      right: 0;
+      position: absolute;
+      padding: 10px 0;
+      background: $blue;
+      border-top: 1px solid $blue-white;
+      border-radius: 0 0 8px 8px;
+      @include breakpoint($tablet-bp) {
+        border-radius: 8px;
+        border: 2px solid $blue-white;
+        top: 35px;
+      }
+      &._open{
+        display: block !important;
+      }
+
+
+    }
+    &::after{
+      content: '';
+      display: inline-block;
+      margin-top: 1px;
+      margin-left: 6px;
+      min-width: 9px;
+      height: 5px;
+      background: url("../img/arrow-menu.svg") no-repeat 0 0/contain;
+    }
+    &-select{
+      width: 100%;
+      height: 100%;
+      &._en{
+        background: url("../img/language-en.webp") no-repeat 0 0/contain;
+      }
+      &._pt{
+        background: url("../img/language-pt.webp") no-repeat 0 0/contain;
+      }
+    }
+
+  }
 
   &__row {
     display: flex;
@@ -74,6 +241,22 @@
 
   &__logo {
     flex: 1 1 auto;
+    margin: 0 15px 0 0;
+    position: relative;
+    z-index: 10;
+    @include breakpoint(1240px){
+      max-width: 50px;
+    }
+
+    @include breakpoint($tablet-bp) {
+      max-width: 100%;
+      flex: 0 1 auto;
+    }
+    img{
+      @include breakpoint($tablet-bp) {
+        max-width: 76px;
+      }
+    }
   }
 
   &__menu {
@@ -82,27 +265,28 @@
     align-items: center;
     width: 100%;
     @include breakpoint($tablet-bp) {
-      padding: 95px 15px 0;
+      padding: 85px 15px 0;
       flex-direction: column-reverse;
       align-items: stretch;
       justify-content: flex-end;
       position: fixed;
-      top: -100%;
+      left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(189.48deg, #20030B -42.96%, #480F1F 92.84%);
+      background: $blue-gradient;
       overflow: auto;
-      left: 0;
+      top: 0;
       z-index: 4;
-      transition: top 0.3s ease 0s;
+      transition: left 0.3s ease 0s;
       &._active {
-        top: 0;
+        left: 0;
       }
     }
   }
 
   &__nav {
     flex: 1 1 auto;
+    margin: 0 15px 0 0;
     @include breakpoint($tablet-bp) {
       flex: 0 1 auto;
       max-width: 500px;
@@ -116,92 +300,42 @@
     display: flex;
     align-items: center;
 
+    &::before{
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: url("../img/search-icon.svg") no-repeat 0 0/contain;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
     &-input {
-      position: absolute;
       font-family: $font-popins-reg;
       display: inline-block;
-      width: 350px;
-      padding: 10px 10px 10px 30px;
-      font-size: 17px;
-      line-height: 30px;
-      border-radius: 12px;
-      background: $white;
-      border: 1.5px solid $grey;
-      color: $grey;
-      right: -6px;
-      top: 50px;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity $transition, visibility $transition;
-
-      &._active {
-        width: 350px;
-        opacity: 1;
-        visibility: visible;
+      width: 280px;
+      padding: 15px 40px 13px 25px;
+      font-size: 13px;
+      line-height: 20px;
+      border-radius: 100px;
+      background: $blue-white;
+      color: $white;
+      @include breakpoint(1240px){
+        width: 227px;
       }
+      &::placeholder{
+        font-family: $font-popins-semb;
+        color: $grey;
+      }
+      &:focus{
+        outline: 1px solid $yellow;
+      }
+
+
+
     }
 
-    &-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: $white;
-      border-radius: 12px;
-      cursor: pointer;
-      position: relative;
-      z-index: 2;
-      transition: background-color $transition;
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(45deg);
-        width: 25px;
-        height: 3px;
-        border-radius: 5px;
-        background-color: $orange;
-        opacity: 0;
-        transition: opacity $transition;
-      }
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(-45deg);
-        width: 25px;
-        border-radius: 5px;
-        height: 3px;
-        background-color: $orange;
-        opacity: 0;
-        transition: opacity $transition;
-      }
-
-      &._active::before,
-      &._active::after {
-        opacity: 1;
-      }
-
-      &:hover {
-        background: $white-hover;
-      }
-    }
-
-    &-image {
-      fill: $orange;
-      transition: opacity $transition;
-      opacity: 1;
-
-      &._active {
-        opacity: 0;
-      }
-    }
   }
 }
 
@@ -211,6 +345,10 @@
       margin: 0 auto 10px;
       max-width: 500px;
       width: 100%;
+      &::before{
+        right: auto;
+        left: 18px;
+      }
 
       &-input {
         border: none;
@@ -219,33 +357,20 @@
         visibility: visible;
         position: static;
         width: 100%;
-        padding: 16px 13px 14px 45px;
-        font-size: 17px;
-        line-height: 25px;
+        padding: 15px 13px 13px 45px;
+        font-size: 13px;
+        line-height: 20px;
         background: rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
+        border-radius: 100px;
 
-        &::placeholder {
-          color: $white;
-        }
       }
 
-      &-btn {
-        background: transparent;
-        position: absolute;
-        left: 5px;
-        top: 50%;
-        transform: translateY(-50%);
 
-        &:hover {
-          background: transparent;
-        }
-      }
     }
 
     &__nav{
       overflow-y: scroll;
-      padding: 60px 0 60px 0;
+      padding: 35px 0 35px 0;
     }
   }
 }
@@ -260,8 +385,9 @@
   &__item {
     position: relative;
 
+
     &:not(:last-child) {
-      margin: 0 35px 0 0;
+      margin: 0 25px 0 0;
     }
 
 
@@ -273,7 +399,7 @@
 
 
       &:hover .menu__link {
-        color: $white-hover;
+        color: $yellow;
       }
 
       &:hover::before {
@@ -281,7 +407,11 @@
       }
 
       &:hover span::after {
-        background: url("../img/polygon-hover.svg") no-repeat 50% 0/contain;
+        transform: rotate(180deg);
+        margin-top: 0;
+        @include breakpoint($tablet-bp) {
+          transform: rotate(0deg);
+        }
       }
 
       &::before {
@@ -303,11 +433,15 @@
       span::after {
         content: '';
         display: inline-block;
-        background: url("../img/polygon.svg") no-repeat 50% 0/contain;
-        width: 11px;
-        height: 7px;
-        margin-left: 10px;
+        background: url("../img/arrow-menu.svg") no-repeat 50% 0/contain;
+        width: 9px;
+        height: 5px;
+        margin-left: 5px;
         margin-top: -2px;
+        @include breakpoint($tablet-bp) {
+          margin-left: auto;
+          margin-right: 10px;
+        }
       }
 
     }
@@ -318,11 +452,11 @@
       &::after {
         content: '';
         display: inline-block;
-        background: url("../img/polygon-hover.svg") no-repeat 50% 0/contain;
-        width: 11px;
-        height: 7px;
+        background: url("../img/arrow-menu.svg") no-repeat 50% 0/contain;
+        width: 9px;
+        height: 5px;
         position: absolute;
-        right: 0;
+        right: 10px;
         top: 50%;
         transform: translateY(-50%) rotate(-90deg);;
         pointer-events: none;
@@ -332,27 +466,32 @@
     &-list {
       position: absolute;
       z-index: 1;
-      min-width: 257px;
-      top: 30px;
+      min-width: 220px;
+      max-width: 230px;
+      top: 46px;
       left: 0;
       display: none;
-      padding: 10px 20px;
-      background: linear-gradient(180deg, #FCEDF0 0%, #FFFFFF 29.32%);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-      border-radius: 8px;
+      padding: 7px 0;
+      background: $blue;
+      border-top: 1px solid $blue-white;
+      border-radius: 0 0 8px 8px;
+      @include breakpoint(1240px){
+        top: 44px;
+      }
     }
 
     &-link {
       font-family: $font-popins-reg;
-      color: $black-one;
-      font-size: 15px;
-      line-height: 34px;
+      color: $white;
+      padding: 9px 20px 7px;
+      font-size: 14px;
+      line-height: 18px;
       display: inline-block;
       transition: color $transition;
       width: 100%;
 
       &:hover {
-        color: $orange;
+        background: $blue-white;
       }
     }
 
@@ -367,17 +506,24 @@
     position: relative;
     z-index: 2;
     font-family: $font-popins-reg;
-    font-size: 18px;
+    font-size: 14px;
+    line-height: 21px;
     color: $white;
     transition: color $transition;
 
+    @include breakpoint(1240px){
+      font-size: 11px;
+    }
     &:hover {
-      color: $white-hover;
+      color: $yellow;
     }
 
     @include breakpoint($tablet-bp) {
-      font-size: 22px;
-      line-height: 24px;
+      width: 100%;
+      font-size: 18px;
+      line-height: 27px;
+      padding: 15px 0;
+      border-top: 1px solid $blue-white;
     }
   }
 }
@@ -392,7 +538,11 @@
     &__item {
       width: 100%;
       &:not(:last-child) {
-        margin: 0 0 25px 0;
+        margin: 0 ;
+      }
+
+      &:last-child{
+        border-bottom: 1px solid $blue-white;
       }
 
 
@@ -418,16 +568,13 @@
       }
 
       &-list {
-        width: 100%;
+        min-width: 100%;
         position: static;
         display: none;
         background: transparent;
         box-shadow: none;
-        padding: 20px 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.14);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+        padding: 20px 0 20px 0;
         border-radius: 0;
-        margin-top: 20px;
         &._open{
           display: block;
         }
@@ -438,7 +585,7 @@
         }
       }
       &-link{
-        color: $grey;
+        color: $white;
         font-size: 17px;
         line-height: 20px;
       }

@@ -1,6 +1,7 @@
 .casino{
-  padding: 140px 0 140px 0;
-  background: $burgundy url("../img/home/casino/bg-desc-test.webp") no-repeat 50% 70%/cover;
+  padding: 75px 0 45px 0;
+  //background: $burgundy url("../img/home/casino/bg-desc-test.webp") no-repeat 50% 70%/cover;
+  background: green;
 
   &__row{
     display: flex;
@@ -13,41 +14,62 @@
     align-items: flex-start;
   }
   &__title{
-    font-family: $font-popins-semb;
+    font-family: $font-rougant;
     font-size: 38px;
-    line-height: 54px;
-    color: $white-grey;
-    margin: 0 0 30px 0;
+    line-height: 58px;
+    color: $pink-title;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
     max-width: 420px;
   }
   &__link{
+    font-family: $font-popins-semb;
     display: inline-block;
-    padding: 18px 32px 16px;
+    padding: 15px 40px 13px;
     cursor: pointer;
+    font-size: 16px;
+    line-height: 20px;
+
+  }
+
+  &__list{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 15px;
+    &-title{
+      text-align: center;
+      color: $pink-title;
+      font-family: $font-rougant;
+      font-size: 28px;
+      line-height: 38px;
+      margin: 0 0 15px 0;
+    }
   }
   &__item{
     display: flex;
     align-items: center;
-    width: 335px;
-    &:not(:last-child){
-      margin: 0 0 15px 0;
-    }
+    flex-direction: column;
+    width: 105px;
+    max-width: 105px;
+
     &-image{
-      max-width: 150px;
-      margin: 0 15px 0 0;
+      max-width: 105px;
       min-width: 105px;
       img{
-        border-radius: 8px;
+        border-radius: 4px;
       }
     }
     &-info{
       flex: 1 1 auto;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      margin: 0 15px 0 0;
+      align-items: center;
+      margin: -6.5px 0 5px 0;
     }
     &-title{
+      font-family: $font-popins-semb;
+      text-align: center;
       font-size: 14px;
       line-height: 21px;
       letter-spacing: -0.004em;
@@ -56,22 +78,28 @@
     &-reviews{
       display: flex;
       align-items: center;
+      justify-content: center;
+      background: $yellow;
+      padding: 0 6px 0;
+      border-radius: 100px;
+      margin: 0 0 5px 0;
       &-img{
         display: inline-block;
-        margin: 0 5px 0 0;
+        margin: 0 8px 0 0;
       }
       &-grade{
-        font-family: $font-popins-reg;
-        font-size: 12px;
-        line-height: 18px;
-        color: $grey;
+        font-family: $font-popins-semb;
+        font-size: 9px;
+        line-height: 16px;
+        color: $blue;
+
       }
     }
     &-link{
       display: inline-block;
       padding: 7px 17px 5px;
       font-family: $font-popins-reg;
-      font-size: 13px;
+      font-size: 12px;
       line-height: 20px;
       white-space: nowrap;
 
@@ -82,7 +110,7 @@
 @media screen and (max-width: 830px){
   .casino{
     padding: 85% 0 50px 0;
-    background: #2C0715 url("../img/home/casino/bg-tab-test.webp") no-repeat;
+    background: $green url("../img/home/casino/bg-tab-test.webp") no-repeat;
     background-size: cover;
     background-position: 50% 0;
     &__row{
@@ -97,30 +125,38 @@
       text-align: center;
       max-width: 480px;
     }
-    &__item{
-      width: 445px;
-    }
+
   }
 }
 
 @media screen and (max-width: 600px){
   .casino{
-    background: #2C0715  url("../img/home/casino/bg-mob-test.webp") no-repeat ;
+    background: $green  url("../img/home/casino/bg-mob-test.webp") no-repeat ;
     background-size: 100%;
     padding: 100% 0 40px 0;
 
     &__title{
-      font-size: 28px;
-      line-height: 44px;
+      font-size: 34px;
+      line-height: 40px;
       text-align: center;
       max-width: 100%;
-      margin: 0 0 20px 0;
+      margin: 0 0 12px 0;
     }
     &__list{
       width: 100%;
+      &-title{
+        font-size: 22px;
+        line-height: 26px;
+        letter-spacing: -0.01em;
+      }
     }
-    &__item{
-      width: 100%;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .casino{
+    &__list{
+      grid-template-columns: auto auto;
     }
   }
 }

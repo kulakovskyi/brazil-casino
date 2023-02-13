@@ -1,34 +1,55 @@
-.burgundy-btn{
-  color: $white;
-  border-radius: 8px;
-  background: $burgundyBtn;
-  box-shadow: $boxShadowBtn;
+.blue-btn{
+  color: $yellow;
+  border-radius: 100px;
+  background: $blue;
   transition: background-color $transition;
   &:hover{
-    background: $burgundyBtn-hover;
+    background: $blue-hover;
   }
 }
 
 
-.orange-btn{
-  border-radius: 8px;
-  background: $orangeBtn;
-  box-shadow: $boxShadowBtn;
-  color: $black-font-orangeBtn;
+.yellow-btn{
+  border-radius: 100px;
+  background: $yellow;
+  color: $blue;
   transition: background-color $transition;
   &:hover{
-    background: $orangeBtn-hover;
+    background: $yellow-hover;
   }
 }
 
-.grey-btn{
-  border-radius: 8px;
-  color: $white;
-  background: $greyBtn;
-  box-shadow: $boxShadowBtn;
+.mint-btn{
+  border-radius: 100px;
+  background: $green-light;
+  color: $blue;
   transition: background-color $transition;
   &:hover{
-    background: $greyBtn-hover;
+    background: $green-light-hover;
   }
 }
+
+.transparent-btn-blue{
+  border-radius: 100px;
+  color: $blue;
+  border: 2px solid $yellow;
+  background: transparent;
+  transition: border-color $transition;
+  &:hover{
+    border-color: $yellow-hover;
+  }
+}
+
+.transparent-btn-yellow{
+  border-radius: 100px;
+  color: $yellow;
+  border: 2px solid $yellow;
+  background: transparent;
+  transition: border-color $transition, color $transition;
+  &:hover{
+    border-color: $yellow-hover;
+    color: $yellow-hover;
+  }
+}
+
 

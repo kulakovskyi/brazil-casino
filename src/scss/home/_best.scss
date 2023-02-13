@@ -1,6 +1,6 @@
 .best {
-  padding: 60px 0 50px 0;
-  background: $pink;
+  padding: 40px 0 60px 0;
+  background: $green-light;
 
   &__container{
     display: flex;
@@ -8,341 +8,272 @@
   }
 
   &__title {
-    text-align: center;
+    text-align: start;
     margin: 0 0 10px 0;
+    color: $blue;
   }
 
   &__text {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 22px;
-    text-align: center;
-    color: $black-one;
+    color: $blue-white;
     max-width: 940px;
-    margin: 0 auto 20px auto;
+    margin: 0 0 20px 0;
   }
 
   &__tabs {
-    margin: 0 auto 30px auto;
+    margin: 0 0 15px 0;
+    padding: 11px 25px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5px;
-    background: rgba(255, 255, 255, 0.01);
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
+    background: transparent;
+    border: 1px solid $border-tabs-color;
+    border-radius: 100px;
     &-item {
       &:not(:last-child) {
-        margin: 0 5px 0 0;
+        margin: 0 30px 0 0;
       }
     }
 
     &-wrap {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     &-btn {
+      position: relative;
       display: inline-block;
-      padding: 8px 18px 6px;
-      font-size: 13px;
-      line-height: 22px;
-      color: $grey-tabs;
-      border-radius: 8px;
       background: transparent;
-      transition: background-color $transition, color $transition, box-shadow $transition;
+      font-size: 14px;
+      line-height: 19px;
+      color: $blue-white;
+      transition: color $transition;
+
+      &::before{
+        opacity: 0;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        border-radius: 100px;
+        background: $blue;
+        bottom: -12.5px;
+        left: 0;
+        transition: opacity $transition;
+      }
 
       &:hover {
-        color: $white;
-        background: $burgundyBtn;
-        box-shadow: $boxShadowBtn;
+        color: $blue;
+      }
+
+      &:hover::before{
+        opacity: 1;
       }
 
       &._active {
-        color: $white;
-        background: $burgundyBtn;
-        box-shadow: $boxShadowBtn;
+        color: $blue;
+      }
+      &._active::before{
+        opacity: 1;
       }
 
     }
   }
 
   &__link{
-    display: inline-block;
-    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    font-size: 14px;
     line-height: 20px;
     align-self: center;
-    text-align: center;
+    text-align: start;
     font-family: $font-popins-semb;
-    padding: 19px 85px 17px;
+    padding: 10px 20px 9px;
+    &::after{
+      content: '';
+      display: inline-block;
+      margin-left: 10px;
+      width: 7px;
+      height: 12px;
+      background: url("../img/home/best/arrow-link.svg") no-repeat 0 0/contain;
+    }
   }
 
   &__list{
     width: 100%;
-    margin: 0 0 35px 0;
-    counter-reset: my-counter ;
+    margin: 0 0 20px 0;
   }
-
-  &__item {
-    overflow: hidden;
+  &__item{
+    padding: 15px 30px 15px 15px;
+    background: $white;
+    border-radius: 8px;
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    align-items: center;
-    border-radius: 12px;
-    background: $white url('../img/home/best/coupon-bg.svg') no-repeat right center/contain;
     &:not(:last-child){
       margin: 0 0 10px 0;
     }
-
-    &-link_wrap{
-      display: flex;
-      flex-direction: column;
+    &-showMore{
+      display: none;
+      padding: 12px;
+      justify-content: center;
       align-items: center;
-    }
-
-    &-link{
-      margin: 0 0 5px 0;
-    }
-
-    &-sublink{
-      display: inline-block;
-      font-size: 10px;
-      line-height: 11px;
-      color: $grey;
-      transition: color $transition;
-      &:hover{
-        color: $black-one;
-      }
-    }
-
-    &-wrapper{
-      flex: 1 1 auto;
-      display: flex;
-      align-items: center;
-      padding: 25px 0px 25px 25px;
-      border-right: 3px dotted $pink;
-      position: relative;
-      &::before,
-      &::after{
-        position: absolute;
-        pointer-events: none;
-        width: 19px;
-        height: 19px;
-        background: $pink;
-        border-radius: 50%;
-        right: -11px;
+      font-family: $font-popins-semb;
+      font-size: 12px;
+      line-height: 18px;
+      color: $blue-white;
+      cursor: pointer;
+      &._openList::after{
+        transform: rotate(180deg);
       }
       &::after{
         content: '';
-        top: -10px;
-      }
-      &::before{
-        content: '';
-        bottom: -10px;
+        margin-left: 5px;
+        width: 10px;
+        height: 6px;
+        background: url("../img/home/best/arrow.svg") no-repeat 0 0/contain;
       }
     }
-    &-image {
-      min-width: 280px;
-      max-width: 280px;
-      margin: 0 23px 0 0;
-      border-radius: 8px;
-      position: relative;
+    &-info{
+      max-width: 436px;
+      display: flex;
+      align-items: center;
+      margin: 0 15px 0 0;
+    }
+    &-image{
+      max-width: 230px;
+      min-width: 230px;
+      margin: 0 20px 0 0;
       img{
-        border-radius: 8px;
-      }
-      &::before{
-        counter-increment: my-counter;
-        content: counter(my-counter) " " ;
-        position: absolute;
-        top: 0;
-        left: 0;
-        font-family: $font-popins-semb;
-        background: $burgundy;
-        border-radius: 8px 0 8px 0;
-        width: 28px;
-        height: 28px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 16px;
-        line-height: 20px;
-        color: $white;
+        border-radius: 4px;
       }
     }
-
-    &-info {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin: 0 25px 0 0;
-      min-width: 164px;
-    }
-
-    &-title {
+    &-title{
       font-family: $font-popins-semb;
       font-size: 22px;
       line-height: 20px;
       letter-spacing: -0.004em;
-      color: $grey-tabs;
-      margin: 0 0 8px 0;
-    }
-
-    &-licensed {
-      font-size: 12px;
-      line-height: 15px;
-      letter-spacing: -0.004em;
       color: $blue;
-      display: flex;
-      align-items: center;
       margin: 0 0 10px 0;
-
-      &-one {
-        margin: 0 8px 0 0;
-      }
     }
-
-    &-rating {
+    &-licensed{
       display: flex;
       align-items: center;
-      margin: 0 0 15px 0;
-
-      &-star {
-        margin: 0 10px 0 0;
-        display: flex;
-        align-items: center;
-
-        img {
-          display: inline-block;
-          margin: 0 6px 0 0;
-        }
-
-        &-text {
-          font-size: 12px;
-          line-height: 12px;
-          color: $black-one;
-          white-space: nowrap;
-        }
-      }
-
-      &-comment {
-        display: flex;
-        align-items: center;
-
-        img {
-          display: inline-block;
+      //flex-wrap: wrap;
+      //gap: 5px;
+      margin: 0 0 8px 0;
+      &-item{
+        font-size: 12px;
+        line-height: 15px;
+        color: $grey-licensed;
+        padding: 4px 10px 3px;
+        background: $grey-licensed-bg;
+        border-radius: 100px;
+        &:not(:last-child){
           margin: 0 5px 0 0;
         }
-
-        &-text {
-          font-size: 12px;
-          line-height: 12px;
-          color: $black-one;
-          white-space: nowrap;
+      }
+    }
+    &-reviews{
+      display: flex;
+      align-items: center;
+      //flex-wrap: wrap;
+      //gap: 5px;
+      &-star,
+      &-message{
+        border: 1px solid $yellow;
+        border-radius: 100px;
+        padding: 2px 7px;
+        display: flex;
+        align-items: center;
+        img{
+          display: inline-block;
+          margin: 0 15px 0 0;
         }
       }
-    }
-
-    &-link {
-      display: inline-block;
-      font-size: 15px;
-      line-height: 20px;
-      color: $white;
-      padding: 12px 47px 10px;
-    }
-
-    &-reviews {
-      display: flex;
-      align-items: flex-start;
-      flex: 1 1 auto;
-      &-btn{
-        display: none;
-        position: absolute;
-        bottom: -17px;
-        left: 50%;
-        transform: translateX(-50%);
-        cursor: pointer;
-        padding: 7px 25px 5px;
-        font-size: 13px;
-        line-height: 20px;
-        border-radius: 8px;
-        color: $black-one;
-        background: $pink;
-        box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.1), inset 0px 4px 0px rgba(255, 255, 255, 0.2);
+      &-star{
+        margin: 0 5px 0 0;
+      }
+      &-text{
+        white-space: nowrap;
+        font-family: $font-popins-semb;
+        font-size: 12px;
+        line-height: 18px;
+        color: $grey-licensed;
       }
     }
 
-    &-plus,
-    &-minus {
-      display: flex;
-      flex-direction: column;
+    &-plus{
+      &-list{
+        max-width: 435px;
+        margin: 0 15px 0 0;
+      }
 
-      &-txt {
+      &-item{
+        font-size: 11px;
+        line-height: 16px;
+        letter-spacing: -0.01em;
+        color: $blue-white;
         display: flex;
-        align-items: flex-start;
-        font-size: 12px;
-        line-height: 28px;
-        color: $grey;
-
-        &::before {
+        align-items: center;
+        &:not(:last-child){
+          margin: 0 0 10px 0;
+        }
+        &::before{
           content: '';
           display: inline-block;
-          margin: 6px 8px 0 0;
-          min-width: 16px;
-          min-height: 16px;
+          margin: 0 8px 0 0;
+          width: 17px;
+          min-width: 17px;
+          height: 17px;
+          background: url("../img/home/best/plus.svg") no-repeat 0 0/contain;
         }
       }
     }
 
-    &-plus {
-      margin: 0 30px 0 0;
-
-      &-txt {
-        &::before {
-          background: url("../img/home/best/arrow.svg") no-repeat 0% 0%/contain;
-        }
-      }
-    }
-
-
-    &-coupon {
-      max-width: 240px;
-      min-width: 240px;
-      padding: 15px 15px 15px 25px;
-      &-title {
+    &-coupon{
+      max-width: 275px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      &-title{
+        text-align: end;
         font-family: $font-popins-semb;
-        font-size: 15px;
-        line-height: 18px;
-        color: $black-one;
-        margin: 0 0 5px 0;
-      }
-
-      &-subtitle {
-        font-family: $font-popins-semb;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 24px;
-        letter-spacing: -0.004em;
-        color: $black-one;
+        letter-spacing: -0.01em;
+        color: $blue;
         margin: 0 0 5px 0;
       }
-
-      &-text {
-        font-size: 13px;
-        line-height: 18px;
-        letter-spacing: -0.004em;
-        color: $black-one;
+      &-text{
+        text-align: end;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: -0.01em;
+        color: $blue-white;
         margin: 0 0 10px 0;
       }
-
-      &-link {
+      &-button{
+        display: flex;
+      }
+      &-btn{
+        font-family: $font-popins-semb;
         display: inline-block;
-        padding: 12px 28px 10px;
-        color: $black-font-orangeBtn;
-        font-size: 15px;
+        padding: 7px 18px 6px;
+        font-size: 12px;
         line-height: 20px;
+        &:first-child{
+          margin: 0 0 5px 0;
+        }
       }
     }
+
   }
+
+
 }
 
 @media screen and (max-width: 1240px) {
@@ -357,102 +288,215 @@
     }
     &__tabs{
       margin: 0;
+      &-btn{
+        &::before{
+          bottom: -12px;
+        }
+      }
 
       &-wrap{
         justify-content: flex-start;
         overflow-x: scroll;
         padding: 0 15px;
-        margin: 0 0 25px 0;
+        margin: 0 0 20px 0;
       }
 
     }
 
     &__list{
-      display: flex;
-      overflow-x: scroll;
-      align-items: stretch;
+      display: grid;
+      grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+      gap: 20px;
       &._openItem{
-        align-items: flex-start;
+        align-items: baseline;
       }
     }
+
     &__item{
-      min-width: 310px;
-      max-width: 325px;
       flex-direction: column;
-      background: $white;
-
+      padding: 0;
       &:not(:last-child){
-        margin: 0 15px 0 0;
+        margin: 0;
       }
-      &-wrapper{
-        flex: 0 1 auto;
-        flex-direction: column;
-        padding: 10px 10px 20px 10px;
-        border-right: none;
-        border-bottom: 3px dotted $pink;
-        &::before{
-          right: -20px;
-          bottom: -11px;
-        }
-        &::after{
-          top: auto;
-          bottom: -11px;
-          left: -20px;
-        }
+      &-showMore{
+        display: flex;
+        order: 3
       }
       &-info{
-        align-items: center;
-      }
-      &-image{
+        max-width: 100%;
+        order: 1;
         margin: 0 0 15px 0;
+        padding: 15px;
+        border-bottom: 1px solid $green-light;
 
       }
-      &-info{
-        margin: 0 0 15px 0;
-      }
-      &-reviews{
-        flex-direction: column;
-        display: none;
-        &._show{
-          display: flex;
-        }
-        &-btn{
-          display: inline-block;
-        }
-        &-plus{
-          margin: 0 0 20px 0
-        }
-      }
-      &-coupon{
-        display: flex;
-        flex-direction: column;
+      &-coupon {
+        flex: 1 1 auto;
+        order: 2;
+        padding: 0 15px 15px 15px;
+        border-bottom: 1px solid $green-light;
+        max-width: 100%;
         align-items: center;
-        width: 100%;
-        height: 100%;
-        padding: 25px 10px;
-        background: url("../img/home/best/coupon-bg-tab.svg") no-repeat 0 50%/cover;
-        &-subtitle{
+        &-title{
           text-align: center;
         }
         &-text{
-          flex: 1 1 auto;
-        }
-        &-link{
-          width: 60%;
           text-align: center;
+        }
+        &-buttons{
+          justify-content: center;
+        }
+      }
+      &-plus{
+        &-list{
+          //flex: 1 1 auto;
+          display: none;
+          order: 4;
+          padding: 15px;
+          margin: 0;
+          max-width: 100%;
+          &._show{
+            display: block;
+          }
+        }
+      }
+
+    }
+
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .best{
+    &__list{
+      gap: 10px;
+      grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+    }
+    &__item{
+      &-image{
+        min-width: 80px;
+        max-width: 175px;
+        margin: 0 15px 0 0;
+      }
+      &-title{
+        font-size: 16px;
+        line-height: 20px;
+        margin: 0 0 5px 0;
+      }
+      &-licensed{
+        margin: 0 0 5px 0;
+        &-item{
+          font-size: 11px;
+          line-height: 15px;
+        }
+      }
+      &-reviews{
+        &-text{
+          font-size: 10px;
+          line-height: 15px;
+        }
+        &-star,
+        &-message{
+
+          img{
+            margin: 0 5px 0 0;
+          }
+        }
+      }
+      &-coupon{
+        &-title{
+          font-size: 18px;
+          line-height: 24px;
+          margin: 0;
+        }
+        &-text{
+          font-size: 12px;
+          line-height: 20px;
+          margin: 0 0 10px 0;
         }
       }
     }
   }
 }
 
+@media screen and (max-width: 700px) {
+  .best{
+    &__item{
+      &-info{
+        flex-direction: column;
+        &-wrap{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+
+      &-image{
+        max-width: 100%;
+        margin: 0 0 15px 0;
+      }
+    }
+
+  }
+}
+
 @media screen and (max-width: 600px){
   .best{
-    padding: 50px 0 40px 0;
+    padding: 40px 0;
+    &__list{
+      grid-template-columns: 100%;
+      padding: 0;
+    }
+    &__item{
+      border-radius: 0;
 
+      &-info{
+        flex-direction: row;
+        &-wrap{
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      &-image{
+        max-width: 100%;
+        margin: 0 15px 0 0;
+      }
+
+      &-info{
+        justify-content: center;
+      }
+
+      &-coupon{
+        &-buttons{
+          width: 100%;
+        }
+        &-btn{
+          width: calc(50% - 2.5px);
+          text-align: center;
+        }
+      }
+    }
+    &__tabs{
+      padding: 8px 20px 7px;
+      &-wrap{
+        margin: 0 0 15px 0;
+      }
+      &-btn{
+        font-size: 12px;
+        line-height: 16px;
+        &::before{
+          bottom: -10px;
+        }
+      }
+
+    }
     &__text{
       font-size: 13px;
       line-height: 22px;
+      margin: 0 0 15px 0;
     }
     &__link{
       width: calc(100% - 30px);

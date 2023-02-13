@@ -4,5 +4,6 @@ bonusItem.forEach(item => {
     let textItemInfo = item.querySelector('.bonus__item-info-text');
     btnItemShow.addEventListener('click', ()=> {
         textItemInfo.classList.toggle('_show');
+        btnItemShow.classList.toggle('_active')
     })
 })

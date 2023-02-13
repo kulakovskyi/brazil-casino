@@ -112,6 +112,8 @@
 
 
   &__cookie {
+    display: none;
+    //display: flex;
     position: fixed;
     width: 80%;
     padding: 20px 40px;
@@ -121,7 +123,7 @@
     left: 50%;
     transform: translateX(-50%);
     border-radius: 30px;
-    display: flex;
+
     align-items: center;
 
     &._hidden {

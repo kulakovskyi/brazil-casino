@@ -1,18 +1,18 @@
 // colors
-$white: #FFFFFF;
+
 $white-hover: #c5c3c3;
-$grey: #808080;
+;
 $grey-white: #E7EAEE;
 $grey-footer: #C1C1D4;
 $orange:  #E1712C;
 $white-grey: #FDFDFD;
 $burgundy: #691A2E;
 $burgundy-sub-bg: #4a101d;
-$black-one: #111111;
+
 $pink: #FCEDF0;
 $pink-hover: #dec2c8;
 $grey-tabs: #1D1C0C;
-$blue: #2275D4;
+
 
 $green-circle: #31A265;
 $red-circle: #FF5767;
@@ -37,9 +37,43 @@ $greyBtn-hover: rgba(255, 255, 255, 0.1);
 $burgundyBtn: #691A2E;
 $burgundyBtn-hover:  #521424;
 
+
+
+
+
+//NEW
+
+// colors
+$black-one: #111111;
+$black: #1D1C0C;
+$green: #38632E;
+$green-white: #009C37;
+$blue: #1D2C53;
+$blue-hover: #263c71;
+$blue-white: #243A64;
+$white: #FFFFFF;
+$grey: #808080;
+$grey-licensed: #6B7E89;
+$grey-licensed-bg: #F6F6F6;
+$grey-text: rgba(255, 255, 255, 0.7);
+$yellow: #F5D955;
+$yellow-hover: #d7bc3b;
+$pink-title: #FCEDF0;
+$green-light: #E0F8DA;
+$green-light-hover: #aed3a9;
+$border-tabs-color: rgba(56, 99, 46, 0.4);
+$border-tabs-color-grey: rgba(255, 255, 255, 0.1);
+
+
+$box-shadow-card: 0px 2px 4px rgba(0, 0, 0, 0.25);
+
+$blue-gradient: linear-gradient(180deg, #1D2C53 0%, #152241 100%);
+
 //transition
 $transition: .3s ease;
 
 //fonts
 $font-popins-reg: 'Popins-reg', sans-serif;
 $font-popins-semb: 'Popins-semb', sans-serif;
+$font-rougant: 'RougantRough', sans-serif;
+
