@@ -148,7 +148,17 @@
       width: 6px;
       height: 11px;
       background: url("../img/general-block-image/arrow-link-author.svg") no-repeat 0 0/contain;
+      transition: transform $transition;
     }
+    &:hover::after{
+      transform: translateX(5px);
+    }
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .author{
+    padding: 30px;
   }
 }
 

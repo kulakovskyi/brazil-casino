@@ -1,6 +1,6 @@
 .footer {
   padding: 50px 0 30px 0;
-  background: $black-one;
+  background: $blue;
 
   &__link {
     display: inline-block;
@@ -17,7 +17,7 @@
 
   &__row {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
     margin: 0 60px 0 0;
   }
@@ -25,15 +25,15 @@
   &__item {
     display: flex;
     flex-direction: column;
-    max-width: 270px;
+    max-width: 260px;
 
     &:not(:last-child) {
-      margin: 0 60px 0 0;
+      margin: 0 70px 0 0;
     }
 
     &-title {
       font-family: $font-popins-semb;
-      color: $white;
+      color: $yellow;
       font-size: 17px;
       line-height: 22px;
       letter-spacing: 0.04em;
@@ -60,15 +60,20 @@
   &__social {
     display: grid;
     grid-template-columns: auto auto auto;
-    gap: 10px 15px;
+    gap: 10px;
 
     &-item {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 64px;
-      height: 42px;
+      height: 64px;
       border-radius: 8px;
+      background: $blue-white;
+      transition: background-color $transition;
+      &:hover{
+        background: $blue-hover;
+      }
 
       svg {
         max-width: 100%;
@@ -117,7 +122,7 @@
     position: fixed;
     width: 80%;
     padding: 20px 40px;
-    background: $burgundy-gradient;
+    background: $cookie-gradient;
     z-index: 10;
     bottom: 30px;
     left: 50%;
@@ -154,9 +159,10 @@
 
     &-btn {
       display: inline-block;
-      padding: 12px 25px 10px;
+      padding: 11px 25px 10px;
       white-space: nowrap;
-
+      font-size: 12px;
+      line-height: 20px;
     }
   }
 
@@ -169,7 +175,8 @@
     align-items: center;
     width: 60px;
     height: 60px;
-    transition: opacity $transition, visibility $transition;
+    border-radius: 50%;
+    transition: opacity $transition, visibility $transition, background-color $transition;
 
     &._hidden {
       opacity: 0;
@@ -188,11 +195,30 @@
 
 @media screen and (max-width: 1170px) {
   .footer {
+    &__wrapper {
+      flex-direction: column-reverse;
+      align-items: stretch;
+      margin: 0 0 40px 0;
+    }
+    &__social{
+      display: flex;
+      gap: 0;
+      justify-content: flex-start;
+      margin: 0 0 30px 0;
+      &-item{
+        &:not(:last-child){
+          margin: 0 10px 0 0;
+        }
+      }
+    }
     &__row {
       display: grid;
       grid-template-columns: auto auto auto;
-      gap: 30px;
-      margin: 0 30px 0 0;
+      gap: 50px;
+    }
+
+    &__link{
+      margin: 0 0 25px 0;
     }
 
     &__info {
@@ -220,7 +246,6 @@
       gap: 30px;
 
     }
-
     &__cookie {
       width: 60%;
     }
@@ -231,15 +256,9 @@
   .footer {
     padding: 30px 0;
 
-    &__wrapper {
-      flex-direction: column;
-      align-items: stretch;
-      margin: 0 0 40px 0;
-    }
-
     &__row {
-      margin: 0 0 40px 0;
-      grid-template-columns: calc(50% - 15px) calc(50% - 15px);
+      margin: 0 0 0 0;
+      grid-template-columns: calc(50% - 7.5px) calc(50% - 7.5px);
       gap: 30px 15px;
     }
 
@@ -248,7 +267,11 @@
     }
 
     &__social {
-      align-self: center;
+      align-self: flex-start;
+      &-item{
+        width: 47px;
+        height: 47px;
+      }
     }
 
     &__sponsor {
@@ -287,11 +310,24 @@
 
     &__btn-top {
       z-index: 10;
-      bottom: 29px;
+      bottom: 25px;
       right: 20px;
       width: 45px;
       height: 43px;
+      border: 2px solid $blue;
 
+
+    }
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .footer{
+    &__social {
+      &-item{
+        width: 40px;
+        height: 40px;
+      }
     }
   }
 }

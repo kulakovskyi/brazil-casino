@@ -45,6 +45,10 @@
       width: 11px;
       height: 13px;
       background: url("../img/home/content/arrow-link-content.svg") no-repeat 0 0/contain;
+      transition: transform $transition;
+    }
+    &:hover::after{
+      transform: translateX(5px);
     }
   }
 }

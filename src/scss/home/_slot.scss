@@ -40,6 +40,10 @@
       width: 7px;
       height: 12px;
       background: url("../img/home/slot/arrow-link.svg") no-repeat 0 0/contain;
+      transition: transform $transition;
+    }
+    &:hover::after{
+      transform: translateX(5px);
     }
 
   }

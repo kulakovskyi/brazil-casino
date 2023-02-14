@@ -1,7 +1,6 @@
 .casino{
   padding: 75px 0 45px 0;
-  //background: $burgundy url("../img/home/casino/bg-desc-test.webp") no-repeat 50% 70%/cover;
-  background: green;
+  background: $green url("../img/home/casino/bg-desc-test.webp") no-repeat 50% 0/cover;
 
   &__row{
     display: flex;
@@ -107,11 +106,11 @@
   }
 }
 
-@media screen and (max-width: 830px){
+@media screen and (max-width: 1024px){
   .casino{
     padding: 85% 0 50px 0;
     background: $green url("../img/home/casino/bg-tab-test.webp") no-repeat;
-    background-size: cover;
+    background-size: 100%;
     background-position: 50% 0;
     &__row{
       flex-direction: column;
@@ -123,7 +122,7 @@
     }
     &__title{
       text-align: center;
-      max-width: 480px;
+      max-width: 700px;
     }
 
   }
@@ -133,7 +132,7 @@
   .casino{
     background: $green  url("../img/home/casino/bg-mob-test.webp") no-repeat ;
     background-size: 100%;
-    padding: 100% 0 40px 0;
+    padding: 85% 0 40px 0;
 
     &__title{
       font-size: 34px;
