@@ -1,0 +1,126 @@
+.casino-online {
+  &__links{
+    background: $white;
+    margin-bottom: 40px;
+    padding: 30px 20px;
+    border: 1px solid $green-light;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    &-item{
+      &:not(:last-child){
+        margin: 0 0 30px 0;
+      }
+      &:nth-child(1){
+        .casino-online__links-item-title{
+          &::before{
+            background: url("../img/home/news/link-icon-title-1.svg") no-repeat 0 0/contain;
+          }
+        }
+      }
+      &:nth-child(2){
+        .casino-online__links-item-title{
+          &::before{
+            background: url("../img/home/news/link-icon-title-2.svg") no-repeat 0 0/contain;
+          }
+        }
+      }
+      &:nth-child(3){
+        .casino-online__links-item-title{
+          &::before{
+            background: url("../img/home/news/link-icon-title-3.svg") no-repeat 0 0/contain;
+          }
+        }
+      }
+      &:nth-child(4){
+        .casino-online__links-item-title{
+          &::before{
+            background: url("../img/home/news/link-icon-title-4.svg") no-repeat 0 0/contain;
+          }
+        }
+      }
+      &:nth-child(5){
+        .casino-online__links-item-title{
+          &::before{
+            background: url("../img/home/news/link-icon-title-5.svg") no-repeat 0 0/contain;
+          }
+        }
+      }
+      &:nth-child(6){
+        .casino-online__links-item-title{
+          &::before{
+            background: url("../img/home/news/link-icon-title-6.svg") no-repeat 0 0/contain;
+          }
+        }
+      }
+      &-title {
+        font-family: $font-popins-semb;
+        font-size: 17px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        margin: 0 0 20px 0;
+        &::before {
+          content: '';
+          width: 40px;
+          height: 40px;
+          display: inline-block;
+          margin: 0 15px 0 0;
+        }
+      }
+      &-list{
+        display: flex;
+        flex-direction: column;
+      }
+      &-link{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        width: 100%;
+        font-size: 15px;
+        line-height: 18px;
+        color: $blue;
+        transition: color $transition;
+        &::after{
+          content: '';
+          display: inline-block;
+          width: 7px;
+          height: 12px;
+          background: url("../img/home/news/arrow-link.svg") no-repeat 0 0/contain;
+          transition: transform $transition;
+        }
+        &:hover{
+          color: $blue-hover;
+        }
+        &:hover::after{
+          transform: translateX(5px);
+        }
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .casino-online {
+    &__links{
+      background: transparent;
+      margin-bottom: 20px;
+      flex-direction: row;
+      overflow-x: scroll;
+      padding: 0 20px;
+      border-radius: 0;
+      &-item{
+        padding: 30px 20px;
+        border-radius: 8px;
+        background: $white;
+        min-width: 310px;
+        max-width: 310px;
+        &:not(:last-child){
+          margin: 0 15px 0 0;
+        }
+      }
+    }
+  }
+}

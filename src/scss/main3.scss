@@ -2,8 +2,13 @@
 @import "vars";
 @import "mixins";
 
+//aside
+@import "page3/_top-casino";
+@import "page3/_casino-online-links";
+
 //main
 @import "page3/_rating";
+@import "page3/_quote";
 @import "page3/_news";
 @import "page3/_reviews";
 @import "page3/_provide";

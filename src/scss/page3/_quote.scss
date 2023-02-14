@@ -1,104 +1,98 @@
 .quote{
-  padding: 30px;
-  background: $burgundy-gradient;
+  padding: 20px 30px;
+  border: 1px solid $green-white;
+  background: $white;
   border-radius: 8px;
   position: relative;
   margin: 0 0 20px 0;
-  &::before{
-    pointer-events: none;
-    content: '‟';
-    font-size: 65px;
-    line-height: 65px;
-    transform: scale(1, -1);
-    height: 18px;
-    color: $orange;
-    position: absolute;
-    display: inline-block;
-    top: 45px;
-    left: 30px;
+
+  &__title{
+    color: $blue;
+    margin: 0 0 15px 0;
   }
-  &::after{
-    pointer-events: none;
-    content: '‟';
-    font-size: 65px;
-    line-height: 65px;
-    transform: scale(-1, 1);
-    height: 18px;
-    color: $orange;
-    position: absolute;
-    display: inline-block;
-    top: 55px;
-    left: 52px;
+  &__row{
+    padding: 0 0 0 100px;
+    display: flex;
+    align-items: center;
+    margin: 0 0 10px 0;
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 77px;
+      height: 46px;
+      background: url("../img/home/news/author-des.svg") no-repeat 0 0/contain;
+    }
   }
-  &__text{
-    font-size: 15px;
-    line-height: 30px;
-    letter-spacing: 0.01em;
-    font-style: italic;
-    color: $white;
+  &__image{
+    margin: 0 10px 0 0;
+    max-width: 48px;
+    img{
+      border-radius: 50%;
+    }
   }
   &__info{
-    display: flex;
-    flex-direction: column;
     &-wrap{
-      margin: 0 0 20px 0;
       display: flex;
       align-items: center;
-      padding: 0 0 0 60px;
     }
-    &-image{
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid $orange;
-      border-radius: 4px;
-      margin: 0 12px 0 0;
-    }
-    &-user{
-      &-name{
-        font-size: 15px;
-        line-height: 20px;
-        color: $white;
-      }
-      &-date{
-        font-size: 11px;
-        line-height: 20px;
-        color: $grey;
-      }
-    }
+  }
+  &__name{
+    font-family: $font-popins-semb;
+    font-size: 15px;
+    line-height: 20px;
+    color: $blue;
+    margin: 0 10px 0 0;
+  }
+  &__licensed{
+    font-size: 12px;
+    line-height: 15px;
+    color: $black-one;
+  }
+  &__date{
+    font-size: 11px;
+    line-height: 20px;
+    color: $black-one;
+  }
+  &__text{
+    font-style: italic;
+    font-size: 18px;
+    line-height: 34px;
+    color: $blue;
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .quote{
+  .quote {
     border-radius: 0;
-    margin: 0 0 10px 0;
+    border-left: none;
+    border-right: none;
+    padding: 20px 15px 20px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .quote{
-    padding: 30px 15px;
-    &::before{
-      right: 48px;
-      left: auto;
-    }
-    &::after{
-      right: 25px;
-      left: auto;
-    }
-    &__info{
-      &-wrap{
-        margin: 0 0 20px 0;
-        padding: 0 60px 0 0;
-      }
-    }
+  .quote {
     &__text{
-      font-size: 13px;
-      line-height: 28px;
+      font-size: 16px;
+      line-height: 30px;
     }
+  }
+}
 
+@media screen and (max-width: 370px){
+  .quote{
+
+    &__row{
+      padding: 0 0 0 51px;
+      &::before{
+        width: 47px;
+        height: 24px;
+        top: 10px;
+      }
+
+    }
   }
 }

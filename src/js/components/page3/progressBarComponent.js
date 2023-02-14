@@ -10,12 +10,6 @@ function circlesCalculate(numbers){
     for (let i= 0 ; i < progressCircles.length; i++) {
         progressCircles[i].setAttribute("stroke-dasharray", progressCircleArray[i] + ' , 100');
         textCircles[i].innerHTML = numbers[i].toFixed(1);
-        function colorCircles(number){
-            if(number >= 4) progressCircles[i].classList.add('green');
-            if(number < 4 && number >= 3) progressCircles[i].classList.add('yellow');
-            if(number < 3) progressCircles[i].classList.add('red');
-        }
-        colorCircles(numbers[i])
     }
 }
 

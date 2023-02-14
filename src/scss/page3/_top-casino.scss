@@ -1,126 +1,116 @@
 .casino-online{
   display: flex;
   flex-direction: column;
+  margin: 0 0 40px 0;
   &__wrap{
     margin: 0 0 25px 0;
   }
-  &__all-link{
-    align-self: center ;
-    display: inline-block;
-    padding: 18px 40px 16px;
-    font-size: 17px;
-    line-height: 20px;
-    letter-spacing: 0.02em;
+  &__all-link {
     margin: 0 auto;
-  }
-  &__title{
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: start;
     font-family: $font-popins-semb;
-    font-size: 20px;
-    line-height: 48px;
+    padding: 10px 20px 9px;
+    &::after{
+      content: '';
+      display: inline-block;
+      margin-left: 10px;
+      width: 7px;
+      height: 12px;
+      background: url("../img/home/best/arrow-link.svg") no-repeat 0 0/contain;
+      transition: transform $transition;
+    }
+    &:hover::after{
+      transform: translateX(5px);
+    }
+  }
+
+  &__title {
+    font-family: $font-rougant;
+    font-size: 28px;
+    line-height: 33px;
     letter-spacing: -0.01em;
-    color: $black-one;
+    color: $blue;
     margin: 0 0 10px 0;
     text-align: center;
   }
 
-  &__tabs{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    background: $pink;
-    box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    padding: 5px;
-    margin: 0 0 20px 0;
-    &-btn{
-      width: calc(50% - 2.5px);
-      display: inline-block;
-      padding: 7px 15px 5px;
-      color: $black-font-orangeBtn;
-      font-size: 13px;
-      border-radius: 8px;
-      line-height: 22px;
-      background: transparent;
-      transition: background-color $transition;
-      &:first-child{
-        margin: 0 5px 0 0;
-      }
-      &:hover{
-        background: $orangeBtn;
-        box-shadow: $boxShadowBtn;
-      }
-      &-one,
-      &-two{
-        &._active{
-          background: $orangeBtn;
-          box-shadow: $boxShadowBtn;
-        }
-      }
-    }
-  }
-
   &__list{
-    &-one{
-      &._hidden{
-        display: none;
-      }
-    }
-    &-two{
-      &._hidden{
-        display: none;
-      }
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 15px;
+    &-title{
+      text-align: center;
+      color: $pink-title;
+      font-family: $font-rougant;
+      font-size: 28px;
+      line-height: 38px;
+      margin: 0 0 15px 0;
     }
   }
 
   &__item{
     display: flex;
     align-items: center;
-    width: 315px;
-    &:not(:last-child){
-      margin: 0 0 15px 0;
-    }
+    flex-direction: column;
+    width: 103px;
+    max-width: 103px;
+
     &-image{
-      min-width: 100px;
-      max-width: 100px;
-      margin: 0 15px 0 0;
+      max-width: 102px;
+      min-width: 102px;
       img{
-        border-radius: 8px;
+        border-radius: 4px;
       }
     }
     &-info{
       flex: 1 1 auto;
-      margin: 0 15px 0 0;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      margin: -6.5px 0 5px 0;
     }
     &-title{
-      font-family: $font-popins-reg;
+      font-family: $font-popins-semb;
+      text-align: center;
       font-size: 14px;
       line-height: 21px;
       letter-spacing: -0.004em;
-      color: $black-one;
+      color: $blue;
     }
     &-reviews{
       display: flex;
       align-items: center;
+      justify-content: center;
+      background: $yellow;
+      padding: 0 6px 0;
+      border-radius: 100px;
+      margin: 0 0 5px 0;
       &-img{
         display: inline-block;
-        margin: 0 5px 0 0;
+        margin: 0 8px 0 0;
       }
       &-grade{
-        font-family: $font-popins-reg;
-        font-size: 12px;
-        line-height: 18px;
-        color: $black-one;
+        font-family: $font-popins-semb;
+        font-size: 9px;
+        line-height: 16px;
+        color: $blue;
+
       }
     }
     &-link{
       display: inline-block;
-      padding: 7px 26px 5px;
+      padding: 7px 17px 5px;
       font-family: $font-popins-reg;
-      font-size: 13px;
+      font-size: 12px;
       line-height: 20px;
+      white-space: nowrap;
 
     }
   }
@@ -130,12 +120,15 @@
   .casino-online{
     width: 80%;
     margin: 0 auto 20px auto;
-    &__item{
-      width: 100%;
+    &__list{
+      justify-items: center;
     }
-    &__all-link{
+
+
+    &__all-link {
       width: 80%;
       text-align: center;
+      margin: 0 auto;
     }
   }
 }
@@ -146,8 +139,20 @@
     padding: 0 15px;
     border-radius: 0;
     &__title{
-      font-size: 20px;
-      line-height: 48px;
+      font-size: 22px;
+      line-height: 26px;
+    }
+    &__all-link{
+      width: 100%;
+    }
+
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .casino-online{
+    &__list{
+      grid-template-columns: auto auto ;
     }
   }
 }

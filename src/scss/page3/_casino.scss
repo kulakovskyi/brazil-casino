@@ -1,10 +1,20 @@
 .casino {
-  background: $white url("../img/page3/casino/bg-desc.svg") no-repeat right center/ contain;
+  background: $white ;
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: 42px;
+    left: 0;
+    background: $green-light;
+  }
   &__wrap{
     overflow: hidden;
   }
   &__container{
-    padding: 5px 15px 50px 15px;
+    padding: 20px 15px 70px 15px;
     position: relative;
 
   }
@@ -12,23 +22,24 @@
   &__breadcrumbs {
     display: flex;
     align-items: center;
-    margin: 0 0 10px 0;
+    margin: 0 0 20px 0;
 
     &-link {
       display: inline-block;
       position: relative;
       font-size: 12px;
       line-height: 20px;
-      color: $black-one;
+      color: $blue-white;
       transition: color $transition;
 
       &:hover {
-        color: $grey;
+        color: $blue;
       }
 
       &:last-child{
+        cursor: default;
         &:hover{
-          color: $black-one;
+          color: $blue;
         }
       }
 
@@ -62,23 +73,23 @@
     }
     &-item{
       &:not(:last-child){
-        margin: 0 25px 0 0;
+        margin: 0 30px 0 0;
       }
     }
     &-link{
       display: inline-block;
-      padding: 15px 0;
+      padding: 10px 0;
       position: relative;
       white-space: nowrap;
-      font-size: 17px;
-      line-height: 22px;
-      color: $black-one;
+      font-size: 14px;
+      line-height: 20px;
+      color: $blue-white;
       transition: color $transition;
       &._active::before{
         opacity: 1;
       }
       &._active{
-        color: $grey-tabs;
+        color: $blue;
       }
       &::before{
         content: '';
@@ -86,15 +97,14 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 8px;
-        border-radius: 8px;
-        background: $orangeBtn;
-        box-shadow: $boxShadowBtn;
+        height: 2px;
+        border-radius: 100px;
+        background: $blue;
         opacity: 0;
         transition: opacity $transition;
       }
       &:hover{
-        color: $grey-tabs;
+        color: $blue;
       }
       &:hover::before{
         opacity: 1;
@@ -105,37 +115,20 @@
 
   &__row{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
   }
 
   &__info {
     flex: 1 1 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 0 38px 0 0;
+    align-items: center;
     position: relative;
-    &::before{
-      content: '';
-      position: absolute;
-      z-index: 1;
-      right: 0;
-      top: -50px;
-      height: 204%;
-      border-right: 5px dashed $pink;
-      pointer-events: none;
-    }
-
-    &-wrap {
-      display: flex;
-      align-items: center;
-    }
 
     &-image {
-      max-width: 325px;
+      max-width: 230px;
       margin: 0 30px 0 0px;
       img{
-        border-radius: 8px;
+        border-radius: 4px;
       }
     }
 
@@ -143,19 +136,14 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      &-wrap {
-        display: flex;
-        align-items: center;
-        margin: 0 0 5px 0;
-      }
     }
 
     &-title {
       font-family: $font-popins-semb;
       font-size: 22px;
-      line-height: 33px;
-      color: $grey-tabs;
-      margin: 0 20px 0 0;
+      line-height: 25px;
+      color: $blue;
+      margin: 0 0 10px 0;
     }
 
     &-licensed {
@@ -164,152 +152,109 @@
       line-height: 15px;
       letter-spacing: -0.004em;
       color: $blue;
+      margin: 0 0 5px 0;
       &-one{
-        margin: 0 8px 0 0;
+        margin: 0 5px 0 0;
+      }
+      &-one,
+      &-two{
+        color: $black-one;
+        padding: 4px 10px 3px;
+        background: $grey-licensed-bg;
+        border-radius: 100px;
       }
     }
 
     &-reviews{
       display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 9px 17px 7px;
-      background: $pink;
-      border-radius: 100px;
-      margin: 0 0 15px 0;
       &-text{
-        font-size: 12px;
-        line-height: 12px;
+        font-family: $font-popins-semb;
+        font-size: 10px;
+        line-height: 18px;
         color: $black-one;
       }
       &-star,
       &-comment{
         display: flex;
         align-items: center;
+        border: 1px solid $yellow;
+        border-radius: 100px;
+        padding: 2px 7px;
         img{
-          margin: 0 6px 0 0;
+          display: inline-block;
+          margin: 0 15px 0 0;
         }
       }
       &-star{
-        margin: 0 12px 0 0;
+        margin: 0 5px 0 0;
       }
     }
 
-    &-sublink{
-      align-self: center;
-      display: inline-block;
-      font-size: 10px;
-      line-height: 11px;
-      color: $grey;
-      transition: color $transition;
-      &:hover{
-        color: $black-one;
-      }
-    }
-
-    &-buttons{
-      display: flex;
-      align-items: flex-start;
-
-      &-wrap{
-        display: flex;
-        flex-direction: column;
-
-      }
-      &-play{
-        padding: 12px 80px 10px;
-        margin: 0 10px 5px 0;
-        font-size: 15px;
-        line-height: 20px;
-      }
-      &-like{
-        width: 42px;
-        height: 42px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
 
     &-country{
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      &-wrap{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-      }
+      align-items: center;
+      position: absolute;
+      right: 15px;
+      bottom: 8px;
       &-name{
         display: flex;
         align-items: center;
-        margin: 0 0 8px 0;
+        margin: 0 20px 0 0;
         img{
           border-radius: 50%;
           margin: 0 10px 0 0;
         }
         &-txt{
-          font-size: 13px;
+          font-size: 12px;
           line-height: 22px;
-          color: $grey-tabs;
+          color: $blue-white;
         }
       }
       &-create,
       &-update{
-        font-size: 13px;
+        font-size: 12px;
         line-height: 22px;
-        color: $grey-tabs;
+        color: $blue-white;
       }
       &-create{
-        margin: 0 0 8px 0;
+        margin: 0 20px 0 0;
       }
-      &-update{
-        margin: 0 0 12px 0;
-      }
-      &-work{
-        max-width: 100px;
-      }
+
 
     }
 
   }
 
   &__bonus{
-    color: $black-one;
-    padding: 0 0 0 38px;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     &-title{
       font-family: $font-popins-semb;
-      font-size: 15px;
-      line-height: 18px;
-      margin: 0 0 5px 0;
-    }
-    &-subtitle{
-      font-family: $font-popins-semb;
-      font-size: 24px;
+      font-size: 20px;
       line-height: 24px;
       margin: 0 0 5px 0;
+      color: $blue;
     }
-    &-text{
-      font-size: 13px;
-      line-height: 18px;
-      letter-spacing: -0.004em;
+    &-subtitle{
+      font-size: 14px;
+      line-height: 20px;
+      color: $blue-white;
       margin: 0 0 10px 0;
     }
-    &-link{
-      display: inline-block;
-      padding: 12px 28px 10px;
-      font-size: 15px;
-      line-height: 20px;
-      margin: 0 0 20px 0;
+    &-buttons{
+      display: flex;
     }
-    &-subtext{
-      font-size: 13px;
-      line-height: 16px;
-      color: $black-one;
-      max-width: 160px;
-      span{
-        font-family: $font-popins-semb;
-        color: $black-one;
+    &-btn{
+      font-family: $font-popins-semb;
+      padding: 7px 18px 6px;
+      font-size: 12px;
+      line-height: 20px;
+      &:first-child{
+        margin: 0 5px 0 0;
       }
     }
   }
@@ -317,34 +262,18 @@
 
 @media screen and (max-width: 1240px) {
   .casino{
+    &__container{
+      padding: 20px 15px 60px 15px;
+    }
     &__row{
-      flex-direction: column;
-      align-items: stretch;
+      margin: 0 0 20px 0;
     }
     &__info{
       padding: 0;
-      margin: 0 0 20px 0;
-      &::before{
-        content: none;
-      }
       &-country{
-        display: flex;
-        flex-direction: row-reverse;
-        &-update{
-          margin: 0;
-        }
-        &-work{
-          margin: 0 15px 0 0;
-        }
+        position: static;
 
       }
-    }
-    &__bonus{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 0 15px 0;
-      border-bottom: 2px solid $pink;
     }
   }
 }
@@ -352,38 +281,30 @@
 @media screen and (max-width: 1024px){
   .casino{
     &__container{
-      padding: 5px 0 0 0;
+      padding: 10px 0 0 0;
     }
     &__breadcrumbs{
       padding: 0 15px;
     }
     &__row{
       padding: 0 15px;
+      flex-direction: column;
+      align-items: flex-start;
     }
     &__links{
       position: static;
       &-list{
         padding: 0 15px;
       }
-
+    }
+    &__bonus{
+      align-items: flex-start;
     }
     &__info{
-      flex-direction: column;
-      align-items: stretch;
-      &-wrap{
-        margin: 0 0 20px 0;
-      }
-      &-image{
-      }
+      margin: 0 0 20px 0;
       &-country{
-        flex-direction: row;
-        &-work{
-          margin: 0;
-        }
-        &-wrap{
-          align-items: flex-start;
-          margin: 0 20px 0 0;
-        }
+        padding: 0 15px;
+        margin: 0 0 15px 0;
       }
     }
   }
@@ -392,121 +313,100 @@
 @media screen and (max-width: 600px) {
   .casino {
     background: $white;
+    &::before{
+      content: none;
+    }
+    &__row{
+      align-items: stretch;
+    }
     &__breadcrumbs {
-      margin: 0 0 10px 0;
+      margin: 0 0 20px 0;
       &-link {
-        font-size: 12px;
+        font-size: 10px;
         line-height: 20px;
       }
     }
     &__links{
+      border-top: 1px solid $green-light;
       &-link{
-        font-size: 15px;
-        line-height: 22px;
+        padding: 10px 0;
+        font-size: 14px;
+        line-height: 20px;
       }
     }
     &__bonus{
-      &-wrap{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-      }
-      &-subtext{
-        text-align: end;
-      }
-      &-link{
-        margin: 0 0 10px 0;
-        padding: 10px 28px 8px;
-      }
+      width: 100%;
+      align-items: stretch;
+      max-width: 100%;
       &-title{
-        font-size: 12px;
-        line-height: 18px;
+        font-size: 18px;
+        line-height: 24px;
         margin: 0;
+        text-align: center;
       }
       &-subtitle{
-        font-size: 15px;
+        font-size: 12px;
         line-height: 20px;
+        text-align: center;
+        margin: 0 0 10px 0;
       }
-      &-text{
-        font-size: 11px;
-        line-height: 18px;
-        margin: 0;
-      }
-      &-link{
-        font-size: 13px;
+      &-btn{
+        font-size: 12px;
         line-height: 20px;
+        text-align: center;
+        width: calc(50% - 2.5px);
       }
     }
     &__info{
-      &-buttons{
-        &-play{
-          font-size: 13px;
-          line-height: 20px;
-          padding: 10px 70px 8px;
-        }
-        &-like{
-          width: 38px;
-          height: 38px;
-        }
-      }
-      &-wrap{
-        flex-direction: column;
-        padding-bottom: 15px;
-        margin-bottom: 5px;
-        border-bottom: 2px solid $pink;
+      margin: 0 0 30px 0;
+      position: relative;
+      &::before{
+        content: '';
+        position: absolute;
+        width: 130%;
+        height: 1px;
+        background: $green-light;
+        left: 0;
+        bottom: -16px;
       }
       &-image{
-        margin: 0 0 15px 0;
         max-width: 100%;
+        flex: 1 1 auto;
+        margin: 0 15px 0 0;
       }
       &-play{
-        align-items: center;
-        &-wrap{
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
+        min-width: 170px;
       }
       &-title{
-        margin: 0 0 2px 0;
-        font-size: 17px;
-        line-height: 26px;
+        font-size: 16px;
+        line-height: 20px;
+        margin: 0 0 6px 0;
       }
       &-licensed{
-        font-size: 11px;
-        line-height: 15px;
-        margin: 0 0 3px 0;
+        &-one,
+        &-two{
+          font-size: 11px;
+        }
       }
       &-reviews{
-        padding: 0;
-        background: transparent;
+        &-text{
+          font-size: 10px;
+          line-height: 15px;
+          white-space: nowrap;
+        }
       }
       &-country{
-        padding-bottom: 10px ;
-        border-bottom: 2px solid $pink;
-        align-items: center;
-        &-wrap{
-          flex: 1 1 auto;
-        }
-        &-work{
-          max-width: 75px;
-        }
         &-name{
-          &-txt{
-            font-size: 11px;
-            line-height: 14px;
-          }
-          img{
-            margin: 0 5px 0 0;
-          }
+          margin: 0 10px 0 0;
+        }
+        &-name-txt,
+        &-create,
+        &-update{
+          font-size: 10px;
+          line-height: 14px;
         }
         &-create{
-          font-size: 11px;
-          line-height: 14px;
-        }
-        &-update{
-          font-size: 11px;
-          line-height: 14px;
+          margin: 0 10px 0 0;
         }
       }
 
