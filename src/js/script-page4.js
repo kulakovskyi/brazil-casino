@@ -13,7 +13,5 @@ import { scrollTop } from './components/scrollTopComponent';
 //Acordeon
 import { accorderon } from './functions/accorderon';
 
-// Реализация скрола по якорю
-//import { scrollAnchors } from './functions/scrollAnchors';
 
 

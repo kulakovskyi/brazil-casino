@@ -1,14 +1,15 @@
 .review{
+  order: 1;
   padding: 30px;
   background: $white;
   border-radius: 8px;
   margin: 0 0 20px 0;
   &__title{
-    margin: 0 0 20px 0;
+    margin: 0 0 10px 0;
   }
   &__text{
-    font-size: 15px;
-    line-height: 30px;
+    font-size: 14px;
+    line-height: 26px;
     color: $black-one;
     margin: 0 0 20px 0;
   }
@@ -19,33 +20,39 @@
   }
 
   &__item{
-    border-top: 1px solid $grey-white;
+    border-top: 1px solid $green-light;
     font-size: 14px;
-    line-height: 20px;
-    color: $black-one;
+    line-height: 21px;
+    color: $blue-white;
     display: grid;
     padding: 20px 0;
     grid-template-columns: 40% 60%;
     gap: 15px;
+    &-info{
+      color: $blue;
+    }
+    &:last-child{
+      border-bottom: 1px solid $green-light;
+    }
   }
 }
 
 @media screen and (max-width: 1024px) {
   .review{
-    padding: 30px 15px 20px;
+    padding: 20px 15px 20px;
     border-radius: 0;
-    margin: 0 0 10px 0;
+    margin: 0 0 40px 0;
   }
 }
 
 @media screen and (max-width: 600px) {
   .review{
     &__title{
-      margin: 0 0 10px 0;
+      margin: 0 0 20px 0;
     }
     &__text{
-      font-size: 13px;
-      line-height: 22px;
+      font-size: 14px;
+      line-height: 26px;
       margin: 0 0 25px 0;
     }
 
@@ -53,8 +60,8 @@
     &__item{
       grid-template-columns: 50% 50%;
       padding: 12px 0;
-      font-size: 13px;
-      line-height: 20px;
+      font-size: 12px;
+      line-height: 18px;
     }
   }
 }

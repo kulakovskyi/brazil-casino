@@ -1,34 +1,52 @@
 .pay {
-  padding: 30px;
+  padding: 20px 30px 0;
   background: $white;
   border-radius: 8px;
   margin: 0 0 20px 0;
+  overflow: hidden;
   &__title{
-
-    margin: 0 0 20px 0;
+    margin: 0 0 10px 0;
   }
   &__list{
     display: flex;
     flex-direction: column;
     margin: 0 0 20px 0;
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      width: 120%;
+      height: 2px;
+      background: $green-light;
+      bottom: -20px;
+      left: -35px;
+    }
   }
   &__item{
+    padding: 10px 0;
+    border-top: 1px solid $green-light;
     display: flex;
     justify-content: space-between;
-    &:not(:last-child){
-      margin: 0 0 20px 0 ;
+    align-items: center;
+    &:last-child{
+      border-bottom: 1px solid $green-light;
     }
     &-wrap{
+      max-width: 210px;
       display: flex;
       align-items: center;
+      margin: 0 15px 0 0;
+    }
+    &-count{
+      max-width: 240px;
       margin: 0 15px 0 0;
     }
     &-image{
       min-width: 100px;
       max-width: 104px;
-      margin: 0 15px 0 0;
+      margin: 0 10px 0 0;
       img{
-        border-radius: 8px;
+        border-radius: 4px;
       }
     }
     &-title{
@@ -36,47 +54,44 @@
       font-size: 14px;
       line-height: 21px;
       letter-spacing: -0.004em;
-      color: $black-one;
+      color: $blue;
     }
     &-review{
-      display: flex;
+      padding: 2px 6px;
+      background: $yellow;
+      border-radius: 100px;
+      display: inline-flex;
       align-items: center;
       img{
         display: inline-block;
-        margin: 0 5px 0 0;
+        margin: 0 8px 0 0;
       }
       &-text{
-        font-size: 12px;
-        line-height: 18px;
-        color: $black-one;
+        font-size: 9px;
+        line-height: 13.5px;
+        color: $blue;
       }
     }
-    &-wrap2{
-      display: flex;
-      align-items: center;
-    }
     &-text{
-      font-size: 13px;
-      line-height: 18px;
-      letter-spacing: -0.004em;
-      color: $black-one;
-      margin: 0 10px 0 0;
-    }
-    &-bonus{
       font-family: $font-popins-semb;
-      font-size: 20px;
+      font-size: 16px;
       line-height: 24px;
       letter-spacing: -0.004em;
-      color: $black-one;
-      margin: 0 13px 0 0;
+      color: $blue;
+    }
+    &-bonus{
+      font-size: 12px;
+      line-height: 20px;
+      letter-spacing: -0.001em;
+      color: $blue-white;
     }
     &-buttons{
       display: flex;
     }
     &-btn{
       display: inline-block;
-      padding: 12px 25px 10px;
-      font-size: 15px;
+      padding: 7px 22px 6px;
+      font-size: 12px;
       line-height: 20px;
       &:not(:last-child){
         margin: 0 10px 0 0;
@@ -85,26 +100,33 @@
   }
 
   &__all-link {
+    font-family: $font-popins-semb;
     display: inline-block;
+    padding: 15px 0 15px 0;
+    width: 100%;
     position: relative;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 20px;
-    color: $black-one;
+    color: $blue;
     transition: color $transition;
 
     &::before {
       content: '';
       position: absolute;
-      width: 11px;
-      height: 7px;
-      top: 56%;
+      width: 12px;
+      height: 8px;
+      top: 50%;
       right: -15px;
       transform: translateY(-50%);
       background: url("../img/page3/bonuses/arrow.svg") no-repeat 0 0/contain;
+      transition: transform $transition;
     }
 
     &:hover {
-      color: $orangeBtn-hover;
+      color: $blue-hover;
+    }
+    &:hover::before{
+      transform: translateY(-50%) translateX(5px);
     }
   }
 }
@@ -113,24 +135,19 @@
   .pay{
     &__list{
       display: grid;
-      grid-template-columns: 100%;
+      grid-template-columns: auto auto;
       gap: 15px;
     }
     &__item{
-      padding: 15px;
-      background: $pink;
+      padding: 20px;
+      border: 1px solid $green-light;
       flex-direction: column;
+      align-items: flex-start;
       &-wrap{
-        margin: 0 0 17px 0;
+        margin: 0 0 15px 0;
       }
-      &-wrap2{
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-auto-rows: auto auto auto;
-      }
-      &-title{
-        font-size: 17px;
-        line-height: 26px;
+      &-cont{
+        margin: 0 0 10px 0;
       }
       &-text{
         grid-column: 1/2;
@@ -159,12 +176,35 @@
 
 @media screen and (max-width: 1024px) {
   .pay{
-    padding: 30px 0 20px;
+    padding: 20px 0 0;
     border-radius: 0;
-    margin: 0 0 10px 0;
-    &__title,
-    &__all-link{
+    &__list{
+      padding: 0 15px 20px;
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      overflow: scroll;
+      gap: 0;
+      &::before{
+        bottom: 0px;
+      }
+    }
+    &__item{
+      min-width: 280px;
+      max-width: 280px;
+      &:not(:last-child){
+        margin: 0 10px 0 0;
+      }
+    }
+    &__title{
       padding: 0 15px;
+    }
+    &__all-link{
+      text-align: center;
+      &::before{
+        content: none;
+        background: none;
+      }
     }
   }
 }
@@ -185,6 +225,9 @@
       &-btn{
         padding: 10px 19px 9px;
       }
+    }
+    &__all-link{
+      padding: 10px 0;
     }
   }
 }

@@ -1,8 +1,8 @@
 .casino {
-  background: $white url("../img/page3/casino/bg-desc.svg") no-repeat right center/ contain;
+  background: $white;
 
   &__container {
-    padding: 5px 15px 40px 15px;
+    padding: 20px 15px 30px 15px;
     position: relative;
 
   }
@@ -10,23 +10,24 @@
   &__breadcrumbs {
     display: flex;
     align-items: center;
-    margin: 0 0 10px 0;
+    margin: 0 0 20px 0;
 
     &-link {
       display: inline-block;
       position: relative;
       font-size: 12px;
       line-height: 20px;
-      color: $black-one;
+      color: $blue-white;
       transition: color $transition;
 
       &:hover {
-        color: $grey;
+        color: $blue;
       }
 
       &:last-child{
+        cursor: default;
         &:hover{
-          color: $black-one;
+          color: $blue;
         }
       }
 
@@ -49,7 +50,7 @@
 
   &__row {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
   }
 
@@ -61,15 +62,15 @@
     }
 
     &-image {
-      width: 325px;
-      height: 112px;
+      width: 200px;
+      height: 97px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 25px 0 0;
-      padding: 35px;
-      background: $pink;
-      border-radius: 8px;
+      margin: 0 20px 0 0;
+      padding: 15px;
+      border: 1px solid $grey-border-pay;
+      border-radius: 4px;
     }
 
     &-play {
@@ -81,45 +82,42 @@
     &-title {
       font-family: $font-popins-semb;
       font-size: 22px;
-      line-height: 33px;
-      color: $grey-tabs;
-      margin: 0 0 4px 0;
+      line-height: 22px;
+      color: $blue;
+      margin: 0 0 10px 0;
     }
 
-    &-reviews {
+    &-reviews{
       display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 9px 17px 7px;
-      background: $pink;
-      border-radius: 100px;
-      margin: 0 0 15px 0;
-
-      &-text {
-        font-size: 12px;
-        line-height: 12px;
+      margin: 0 0 10px 0;
+      &-text{
+        font-family: $font-popins-semb;
+        font-size: 10px;
+        line-height: 18px;
         color: $black-one;
       }
-
       &-star,
-      &-comment {
+      &-comment{
         display: flex;
         align-items: center;
-
-        img {
-          margin: 0 6px 0 0;
+        border: 1px solid $yellow;
+        border-radius: 100px;
+        padding: 2px 7px;
+        img{
+          display: inline-block;
+          margin: 0 15px 0 0;
         }
       }
-
-      &-star {
-        margin: 0 12px 0 0;
+      &-star{
+        margin: 0 5px 0 0;
       }
     }
 
     &-text {
-      font-size: 17px;
-      line-height: 16px;
-      color: $black-one;
+      font-size: 14px;
+      line-height: 20px;
+      color: $blue-white;
 
       span {
         font-family: $font-popins-semb;
@@ -149,17 +147,17 @@
         }
 
         &-txt {
-          font-size: 13px;
+          font-size: 12px;
           line-height: 22px;
-          color: $grey-tabs;
+          color: $blue-white;
         }
       }
 
       &-create,
       &-update {
-        font-size: 13px;
+        font-size: 12px;
         line-height: 22px;
-        color: $grey-tabs;
+        color: $blue-white;
       }
 
       &-create {
@@ -175,11 +173,12 @@
 
 @media screen and (max-width: 1024px) {
   .casino {
+    padding: 10px 0 20px 0;
     &__container {
       padding: 5px 0 0 0;
     }
 
-    &__breadcrumbs {
+    &__breadcrumbs{
       padding: 0 15px;
     }
 
@@ -204,8 +203,15 @@
         flex-direction: row;
 
         &-wrap {
-          align-items: flex-start;
-          margin: 0 20px 0 0;
+          align-items: center;
+          flex-direction: row;
+        }
+        &-name,
+        &-create{
+          margin: 0 15px 0 0;
+        }
+        &-update{
+          margin: 0;
         }
       }
     }
@@ -217,76 +223,38 @@
     background: $white;
 
     &__breadcrumbs {
-      margin: 0 0 10px 0;
-
+      margin: 0 0 20px 0;
       &-link {
-        font-size: 12px;
+        font-size: 10px;
         line-height: 20px;
       }
     }
 
-    &__bonus {
-      &-wrap {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-      }
-
-      &-subtext {
-        text-align: end;
-      }
-
-      &-link {
-        margin: 0 0 10px 0;
-        padding: 10px 28px 8px;
-      }
-
-      &-title {
-        font-size: 12px;
-        line-height: 18px;
-        margin: 0;
-      }
-
-      &-subtitle {
-        font-size: 15px;
-        line-height: 20px;
-      }
-
-      &-text {
-        font-size: 11px;
-        line-height: 18px;
-        margin: 0;
-      }
-
-      &-link {
-        font-size: 13px;
-        line-height: 20px;
-      }
+    &__row{
+      align-items: stretch;
     }
 
     &__info {
-      &-wrap {
-        width: 100%;
-        flex-direction: column;
-        padding-bottom: 15px;
-        margin-bottom: 15px;
-        border-bottom: 2px solid $pink;
-      }
 
+      &-title{
+        font-size: 16px;
+        line-height: 20px;
+        margin: 0 0 5px 0;
+      }
       &-text{
-        font-size: 13px;
-        line-height: 16px;
+        font-size: 12px;
+        line-height: 20px;
       }
 
       &-image {
-        margin: 0 0 15px 0;
+        margin: 0 15px 0 0;
         max-width: 100%;
-        min-width: 100%;
+        width: 100%;
+        flex: 1 1 auto;
       }
 
       &-play {
-        align-items: center;
-
+        min-width: 170px;
         &-wrap {
           flex-direction: column;
           align-items: flex-start;
@@ -300,14 +268,15 @@
         line-height: 26px;
       }
 
-      &-reviews {
-        padding: 0;
-        background: transparent;
+      &-reviews{
+        &-text{
+          font-size: 10px;
+          line-height: 15px;
+          white-space: nowrap;
+        }
       }
 
       &-country {
-        padding-bottom: 10px;
-        border-bottom: 2px solid $pink;
         align-items: center;
 
         &-wrap {
@@ -316,7 +285,7 @@
 
         &-name {
           &-txt {
-            font-size: 11px;
+            font-size: 10px;
             line-height: 14px;
           }
 
@@ -326,12 +295,12 @@
         }
 
         &-create {
-          font-size: 11px;
+          font-size: 10px;
           line-height: 14px;
         }
 
         &-update {
-          font-size: 11px;
+          font-size: 10px;
           line-height: 14px;
         }
       }
