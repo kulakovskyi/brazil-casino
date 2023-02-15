@@ -8,13 +8,12 @@
 
 
 .title{
-  font-family: $font-popins-semb;
-  color: $black-one;
-  font-size: 24px;
-  line-height: 36px;
+  font-family: $font-rougant;
+  font-size: 32px;
+  line-height: 38px;
   @media screen and (max-width: 600px){
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 24px;
+    line-height: 28px;
   }
 }
 
@@ -31,13 +30,14 @@ body {
   }
   font-family: $font-popins-reg;
   font-style: normal;
-  font-size: 20px;
+  font-size: 14px;
+  line-height: 22px;
   letter-spacing: 0.02em;
   color: $black-one;
-  background: $pink;
+  background: $green-light;
 }
 
 // подключения компонентов страницы
 @import "general-block/header";
 @import "page2/_casino";
-@import "page2/_news";
+@import "home/_news";

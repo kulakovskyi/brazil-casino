@@ -7,16 +7,27 @@
 @import "base/wrapper-aside2";
 
 
-.title {
-  font-family: $font-popins-semb;
-  color: $black-one;
-  font-size: 24px;
-  line-height: 36px;
-  @media screen and (max-width: 600px) {
-    font-size: 20px;
-    line-height: 30px;
+.title{
+  font-family: $font-rougant;
+  font-size: 32px;
+  line-height: 38px;
+  @media screen and (max-width: 600px){
+    font-size: 24px;
+    line-height: 28px;
   }
 }
+
+.title-pop{
+  font-family: $font-popins-semb;
+  font-size: 24px;
+  line-height: 48px;
+  color: $blue;
+  @media screen and (max-width: 600px){
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
 
 
 [class*="__container"] {
@@ -29,13 +40,13 @@ body {
   &._lock {
     overflow: hidden;
   }
-
   font-family: $font-popins-reg;
   font-style: normal;
-  font-size: 20px;
+  font-size: 14px;
+  line-height: 22px;
   letter-spacing: 0.02em;
   color: $black-one;
-  background: $pink;
+  background: $white;
 }
 
 // подключения компонентов страницы
@@ -54,11 +65,10 @@ body {
 }
 
 .aside{
-  min-width: 400px;
-  max-width: 400px;
+  min-width: 340px;
+  max-width: 340px;
   @media screen and (max-width: 1285px){
-    min-width: 380px;
-    max-width: 380px;
+    min-width: 330px;
   }
 
   @media screen and (max-width: 1024px){

@@ -1,8 +1,6 @@
 .public{
   position: relative;
-  padding: 0 0 30px 0;
-  border-bottom: 1px solid $grey;
-  margin: 0 0 20px 0;
+  margin: 0 0 40px 0;
   &__link{
     position: absolute;
     width: 100%;
@@ -12,13 +10,43 @@
   }
   &__image{
     margin: 0 0 20px 0;
+    position: relative;
     img{
       border-radius: 8px;
+    }
+
+  }
+  &__date{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: -0.004em;
+    color: $black-one;
+    padding: 4px 10px 3px;
+    background: $grey-licensed-bg;
+    border-radius: 100px;
+  }
+  &__licensed{
+    display: flex;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    p{
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: -0.004em;
+      color: $black-one;
+      padding: 4px 10px 3px;
+      background: $grey-licensed-bg;
+      border-radius: 100px;
+      margin: 0 5px 0 0;
     }
   }
   h2{
     font-family: $font-popins-semb;
-    color: $black-one;
+    color: $blue;
     font-size: 24px;
     line-height: 36px;
     margin: 0 0 10px 0;
@@ -27,18 +55,7 @@
       line-height: 30px;
     }
   }
-  &__info{
-    display: flex;
-    align-items: center;
-    p{
-      font-size: 15px;
-      line-height: 22px;
-      color: $grey-tabs;
-      &:not(:last-child){
-        margin: 0 20px 0 0;
-      }
-    }
-  }
+
 }
 
 @media screen and (max-width: 1024px) {
@@ -48,8 +65,7 @@
         border-radius: 0;
       }
     }
-    h2,
-    &__info{
+    h2{
       padding: 0 15px;
     }
   }
@@ -58,15 +74,27 @@
 @media screen and (max-width: 600px) {
   .public{
     padding: 0 0 5px 0;
-    &__info{
-      flex-wrap: wrap;
+    &__image{
+      margin: 0 0 15px 0;
+    }
+    &__title{
+      font-size: 20px;
+      line-height: 30px;
+    }
+    &__date{
+      font-size: 11px;
+      line-height: 15px;
+      padding: 2px 11px;
+      bottom: 10px;
+      left: 10px;
+    }
+    &__licensed{
+      top: 10px;
+      left: 10px;
       p{
         font-size: 11px;
-        line-height: 14px;
-        margin: 0 0 15px 0;
-        &:not(:last-child){
-          margin: 0 15px 15px 0;
-        }
+        line-height: 15px;
+        padding: 2px 11px;
       }
     }
   }
