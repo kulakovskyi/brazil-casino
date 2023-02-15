@@ -1,4 +1,4 @@
-.slots{
+.similar{
   overflow: hidden;
   background: $white;
   padding: 20px 30px 0;
@@ -29,7 +29,7 @@
     border-radius: 8px;
     overflow: hidden;
     //max-width: 190px;
-    &:hover .slots__item-info{
+    &:hover .similar__item-info{
       opacity: 1;
     }
 
@@ -118,7 +118,7 @@
 
 
 @media screen and (max-width: 1024px) {
-  .slots{
+  .similar{
     padding: 20px 15px 0;
     border-radius: 0;
     &__all-link{
@@ -132,7 +132,7 @@
 }
 
 @media screen and (max-width: 800px) {
-  .slots{
+  .similar{
     &__list{
       grid-template-columns: auto auto auto;
     }
@@ -140,7 +140,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .slots{
+  .similar{
     &__list{
       grid-template-columns: auto auto;
       gap: 15px;

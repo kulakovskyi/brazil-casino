@@ -1,38 +1,50 @@
 .game{
-  padding: 30px;
+  order: 1;
+  padding: 20px 30px 40px;
   background: $white;
   border-radius: 8px;
   margin: 0 0 20px 0;
   &__title{
-    margin: 0 0 20px 0;
-  }
-  &__text{
-    font-size: 15px;
-    line-height: 30px;
-    color: $black-one;
-    margin: 0 0 20px 0;
+    margin: 0 0 10px 0;
   }
   &__image{
     position: relative;
-    margin: 0 0 30px 0;
+    margin: 0 0 20px 0;
     img{
       border-radius: 8px;
     }
     &-buttons{
       display: flex;
-      width: 420px;
+      width: 380px;
       position: absolute;
-      top: 50%;
+      bottom: 40px;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, 0);
     }
     &-btn{
       width: calc(50% - 10px);
       display: inline-block;
-      padding: 12px 15px 10px;
-      font-size: 15px;
+      padding: 10px 18px 9px;
+      font-size: 14px;
       line-height: 20px;
-      text-align: center;
+      text-align: start;
+      position: relative;
+      &::after{
+        content: '';
+        position: absolute;
+        display: inline-block;
+        height: 7px;
+        width: 12px;
+        background: url("../img/page5/games/arrow-link.svg") no-repeat 0 0/contain;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        transition: transform $transition;
+
+      }
+      &:hover::after{
+        transform: translateY(-50%) translateX(5px);
+      }
       &:first-child{
         margin: 0 20px 0 0;
       }
@@ -41,26 +53,76 @@
 
   &__list{
     display: flex;
-    flex-direction: column;
   }
 
   &__item{
-    border-top: 1px solid $grey-white;
-    font-size: 14px;
-    line-height: 20px;
-    color: $black-one;
-    display: grid;
-    padding: 20px 0;
-    grid-template-columns: 40% 60%;
-    gap: 15px;
+    width: calc(33.333% - 10px);
+    &:not(:last-child){
+      margin: 0 15px 0 0;
+    }
+    &-image{
+      width: 100%;
+      margin: 0 0 10px 0;
+      img{
+        border-radius: 4px;
+      }
+    }
+    &-row{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 0 15px 0;
+    }
+    &-title{
+      font-family: $font-popins-semb;
+      font-size: 17px;
+      line-height: 26px;
+      letter-spacing: -0.01em;
+      color: $blue;
+      margin: 0 7px 0 0;
+    }
+    &-review{
+      display: flex;
+      align-items: center;
+      border: 1px solid $yellow;
+      border-radius: 100px;
+      padding: 2px 7px;
+      img{
+        display: inline-block;
+        margin: 0 15px 0 0;
+      }
+      &-text{
+        font-family: $font-popins-semb;
+        font-size: 10px;
+        line-height: 18px;
+        color: $black-one;
+      }
+    }
+    &-link{
+      display: inline-block;
+      padding: 7px 18px 6px;
+      font-size: 12px;
+      line-height: 20px;
+    }
   }
+
 }
 
 @media screen and (max-width: 1024px) {
   .game{
-    padding: 30px 15px 20px;
+    padding: 20px 0;
     border-radius: 0;
-    margin: 0 0 10px 0;
+    margin: 0 0 40px 0;
+    &__title{
+      padding: 0 15px;
+    }
+    &__list{
+      overflow-x: scroll;
+      padding: 0 15px;
+    }
+    &__item{
+      min-width: 260px;
+    }
   }
 }
 
@@ -68,11 +130,6 @@
   .game{
     &__title{
       margin: 0 0 10px 0;
-    }
-    &__text{
-      font-size: 13px;
-      line-height: 22px;
-      margin: 0 0 25px 0;
     }
     &__image{
       &-buttons{
@@ -84,7 +141,7 @@
       }
       &-btn{
         width: calc(50% - 5px);
-        font-size: 13px;
+        font-size: 12px;
         line-height: 20px;
         &:first-child{
           margin: 0 10px 0 0;
@@ -92,11 +149,5 @@
       }
     }
 
-    &__item{
-      grid-template-columns: 50% 50%;
-      padding: 12px 0;
-      font-size: 13px;
-      line-height: 20px;
-    }
   }
 }

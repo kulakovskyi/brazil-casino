@@ -1,6 +1,9 @@
 //Реализация бургер-меню
 import { burger } from './functions/burger';
 
+//Language
+import { languageComponent } from './components/languageComponent.js';
+
 //Footer cookie
 import { footerCookie } from './components/footerCookieComponent';
 
@@ -16,6 +19,4 @@ import { scrollAnchors } from './functions/scrollAnchors';
 // Dynamic Adaptive
 import { dynamicAdaptive } from './components/dynamicAdaptive.js';
 
-//News Tabs
-import { tabsBtnNews } from './components/tabsBtnNewsComponent.js';
 

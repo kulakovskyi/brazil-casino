@@ -1,4 +1,4 @@
-.rtp{
+.legal{
   padding: 20px 30px;
   background: $white;
   border-radius: 8px;
@@ -7,6 +7,13 @@
     margin: 0 0 10px 0;
   }
 
+  &__text{
+    font-size: 14px;
+    line-height: 26px;
+    color: $black-one;
+    position: relative;
+    margin: 0 0 20px 0;
+  }
 
   &__list{
     display: flex;
@@ -34,17 +41,18 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .rtp{
+  .legal{
     padding: 20px 15px 20px;
     border-radius: 0;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .rtp{
+  .legal{
     &__title{
       margin: 0 0 20px 0;
     }
+
 
     &__item{
       grid-template-columns: 50% 50%;

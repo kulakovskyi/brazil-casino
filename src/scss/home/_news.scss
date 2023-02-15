@@ -236,7 +236,7 @@
 
 @media screen and (max-width: 1024px) {
   .casino-online {
-    padding: 40px 0;
+    padding: 40px 0 0 0;
     background: $green-light;
     width: 105%;
     align-self: center;
@@ -294,7 +294,6 @@
 @media screen and (max-width: 600px) {
   .casino-online {
     width: 100%;
-    padding: 40px 0;
 
     &__list,
     &__title,
