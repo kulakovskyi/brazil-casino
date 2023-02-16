@@ -14,11 +14,18 @@
     position: relative;
     font-size: 12px;
     line-height: 20px;
-    color: $grey-tabs;
+    color: $blue-white;
     transition: color $transition;
 
     &:hover {
-      color: $black-one;
+      color: $blue;
+    }
+
+    &:last-child{
+      cursor: default;
+      &:hover{
+        color: $blue;
+      }
     }
 
     &:not(:last-child) {
@@ -41,7 +48,7 @@
 @media screen and (max-width: 600px) {
   .casino__breadcrumbs {
     &-link {
-      font-size: 12px;
+      font-size: 10px;
       line-height: 20px;
     }
   }
