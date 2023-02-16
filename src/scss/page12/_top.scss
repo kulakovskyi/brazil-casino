@@ -194,15 +194,15 @@
 
       &-number{
         background: $green-light;
-        outline: 0px solid $white;
-        transition: background-color $transition, outline-color $transition;
+        border: 1px solid transparent;
+        transition: background-color $transition, border-color $transition;
         &._active{
           background: $green-light-hover;
-          outline: 1px solid $blue;
+          border: 1px solid $blue;
         }
         &:hover{
           background: $green-light-hover;
-          outline: 1px solid $blue;
+          border: 1px solid $blue;
         }
       }
     }
