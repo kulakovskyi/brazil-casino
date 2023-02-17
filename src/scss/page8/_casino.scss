@@ -59,6 +59,7 @@
     &-wrap {
       display: flex;
       align-items: center;
+      margin: 0 15px 0 0;
     }
 
     &-image {
@@ -77,6 +78,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      max-width: 550px;
     }
 
     &-title {
@@ -126,6 +128,7 @@
 
 
     &-country {
+      max-width: 200px;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
@@ -201,6 +204,7 @@
 
       &-country {
         flex-direction: row;
+        max-width: 100%;
 
         &-wrap {
           align-items: center;

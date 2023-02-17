@@ -57,6 +57,11 @@
     &-wrap {
       display: flex;
       align-items: center;
+      margin: 0 15px 0 0;
+    }
+
+    &-cont{
+      max-width: 550px;
     }
 
     &-image {
@@ -135,7 +140,6 @@
       }
     }
 
-
     &-data {
       display: flex;
       align-items: center;
@@ -149,6 +153,7 @@
     }
 
     &-list{
+      max-width: 370px;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
@@ -208,6 +213,7 @@
       }
 
       &-list{
+        max-width: 100%;
         margin: 0 0 15px 0;
         display: grid;
         grid-template-columns: calc(50% - 10px) calc(50% - 10px);

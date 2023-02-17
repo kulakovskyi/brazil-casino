@@ -121,6 +121,11 @@
     background: $white;
     border-radius: 8px;
     max-width: 290px;
+
+    &-wrapper{
+      flex: 1 1 auto;
+    }
+
     &-info{
       display: flex;
       align-items: center;
@@ -170,6 +175,7 @@
       margin: 0 5px 0 0;
     }
     &-review{
+      min-width: 47px;
       border: 1px solid $yellow;
       border-radius: 100px;
       padding: 2px 7px;
@@ -186,6 +192,7 @@
       }
     }
     &-list{
+
       display: flex;
       flex-direction: column;
       margin: 20px 0 20px 0;

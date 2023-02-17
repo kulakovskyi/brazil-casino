@@ -56,6 +56,8 @@
   }
 
   &__item{
+    display: flex;
+    flex-direction: column;
     width: 100%;
     padding: 15px 15px 20px;
     background: $white;
@@ -64,6 +66,7 @@
       display: flex;
       align-items: center;
       margin: 0 0 20px 0;
+      flex: 1 1 auto;
     }
     &-image{
       display: flex;

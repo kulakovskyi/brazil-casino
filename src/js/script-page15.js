@@ -13,6 +13,4 @@ import { footerCookie } from './components/footerCookieComponent';
 //btn scrollTop
 import { scrollTop } from './components/scrollTopComponent';
 
-//News Tabs
-import { tabsBtnNews } from './components/tabsBtnNewsComponent.js';
 
