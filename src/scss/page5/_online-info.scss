@@ -1,0 +1,34 @@
+.online-info {
+  padding: 20px 30px;
+  background: $white;
+  border-radius: 8px;
+  margin: 0 0 20px 0;
+
+  &__title {
+    margin: 0 0 10px 0;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 26px;
+    color: $black-one;
+    position: relative;
+  }
+
+}
+
+@media screen and (max-width: 1024px) {
+  .online-info {
+    padding: 20px 15px 20px;
+    border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .online-info {
+    &__title {
+      margin: 0 0 20px 0;
+    }
+
+  }
+}

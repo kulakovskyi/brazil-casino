@@ -33,19 +33,6 @@
     flex-direction: column;
   }
 
-  &__title {
-    color: $blue;
-    margin: 0 0 5px 0;
-  }
-
-  &__text {
-    font-size: 15px;
-    line-height: 22px;
-    color: $blue-white;
-    max-width: 940px;
-    margin: 0 0 20px 0;
-  }
-
 
   &__list{
     display: grid;
@@ -110,8 +97,6 @@
     &__container{
       padding: 0;
     }
-    &__title,
-    &__text,
     &__list{
       padding: 0 15px;
     }
@@ -142,13 +127,7 @@
     padding: 20px 0;
     &__link{
       width: calc(100% - 30px);
-
     }
-    &__text{
-      font-size: 13px;
-      line-height: 22px;
-    }
-
     &__list{
       grid-template-columns: calc(50% - 5px) calc(50% - 5px);
       padding: 0 15px;

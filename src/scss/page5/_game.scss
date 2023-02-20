@@ -7,6 +7,13 @@
   &__title{
     margin: 0 0 10px 0;
   }
+  &__text {
+    font-size: 14px;
+    line-height: 26px;
+    color: $black-one;
+    position: relative;
+    margin: 0 0 10px 0;
+  }
   &__image{
     position: relative;
     margin: 0 0 20px 0;
@@ -123,7 +130,8 @@
         border-radius: 0;
       }
     }
-    &__title{
+    &__title,
+    &__text{
       padding: 0 15px;
     }
     &__list{

@@ -7,21 +7,6 @@
     flex-direction: column;
   }
 
-  &__title {
-    color: $blue;
-    margin: 0 0 5px 0;
-  }
-
-  &__text {
-    font-size: 15px;
-    line-height: 22px;
-    color: $blue-white;
-    max-width: 940px;
-    margin: 0 0 20px 0;
-  }
-
-
-
   &__list{
     display: grid;
     grid-template-columns: calc(33.33% - 17px) calc(33.33% - 17px) calc(33.33% - 17px) ;
@@ -125,8 +110,6 @@
     &__container{
       padding: 0;
     }
-    &__title,
-    &__text,
     &__list{
       padding: 0 15px;
     }
@@ -155,10 +138,6 @@
 @media screen and (max-width: 600px){
   .casinos-slot{
     padding: 20px 0;
-    &__text{
-      font-size: 13px;
-      line-height: 22px;
-    }
 
     &__list{
       grid-template-columns: calc(50% - 5px) calc(50% - 5px);

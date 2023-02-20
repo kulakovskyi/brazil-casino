@@ -6,22 +6,6 @@
     display: flex;
     flex-direction: column;
   }
-
-  &__title {
-    text-align: start;
-    margin: 0 0 10px 0;
-    color: $blue;
-  }
-
-  &__text {
-    font-size: 14px;
-    line-height: 22px;
-    color: $blue-white;
-    max-width: 940px;
-    margin: 0 0 20px 0;
-  }
-
-
   &__link{
     display: flex;
     align-items: center;
@@ -229,8 +213,6 @@
     &__container{
       padding: 0;
     }
-    &__title,
-    &__text,
     &__list{
       padding: 0 15px;
     }
@@ -411,11 +393,6 @@
           text-align: center;
         }
       }
-    }
-    &__text{
-      font-size: 13px;
-      line-height: 22px;
-      margin: 0 0 15px 0;
     }
     &__link{
       width: calc(100% - 30px);
