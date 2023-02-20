@@ -1,11 +1,11 @@
-const bestItemWrapper = document.querySelectorAll('.casino-best__item-wrapper');
-const bestList = document.querySelector('.casino-best__list')
+const bestItemWrapper = document.querySelectorAll('.casinos-best__item');
+const bestList = document.querySelector('.casinos-best__list')
 bestItemWrapper.forEach(item => {
-    let btnShow = item.querySelector('.casino-best__item-reviews-btn');
-    let listReviews = item.querySelector('.casino-best__item-reviews');
+    let btnShow = item.querySelector('.casinos-best__item-showMore');
+    let listReviews = item.querySelector('.casinos-best__item-plus-list');
 
     btnShow.addEventListener('click', () => {
-        const allBtnShow = document.querySelectorAll('.casino-best__item-reviews-btn')
+        const allBtnShow = document.querySelectorAll('.casinos-best__item-showMore')
 
         listReviews.classList.toggle('_show');
         if(!btnShow.classList.contains('_openList') ){
@@ -23,3 +23,4 @@ bestItemWrapper.forEach(item => {
 
     })
 })
+

@@ -1,1 +1,0 @@
-import { btnCard } from './components/shortComponents/short7-component.js';

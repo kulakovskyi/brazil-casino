@@ -24,17 +24,3 @@ bestItemWrapper.forEach(item => {
     })
 })
 
-// const bestItem = document.querySelectorAll('.best__item')
-// const bestList = document.querySelector('.best__list')
-// const allBtnShow = document.querySelectorAll('.best__item-showMore')
-//
-// bestItem.forEach( item => {
-//     const btnShowMore = item.querySelector('.best__item-showMore')
-//     const bestItemList = item.querySelector('.best__item-plus-list')
-//
-//     btnShowMore.addEventListener('click', () => {
-//         btnShowMore.classList.toggle('_open')
-//         bestItemList.classList.toggle('_open')
-//         bestList.classList.add('_open')
-//     })
-// })
